@@ -1,23 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google Search Console -->
+
 <meta name="google-site-verification" content="googlec433f743073de518.html">
 
 <!-- Favicon -->
+
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<title>Inoperando – Selezione personale e aziende | Lavoro e recruiting</title>
-<meta name="description" content="Selezioniamo personale e aziende nel settore industriale edile manutenzione impianti produzione manifattura gestione personale attivo sicurezza compliance. Matching tra candidati e aziende. Paghi solo se assumi. Approccio concreto, rapido e affidabile.">
-<meta name="keywords" content="selezione personale, recruiting operai, cercare lavoro, assumere operai, matching candidati aziende, agenzia recruiting industriale">
+<!-- SEO -->
+
+<title>Inoperando – Cerchi lavoro o personale? Operai, cantieri, recruiting</title>
+<meta name="description" content="Inoperando è il sistema operativo che connette chi cerca lavoro e chi cerca personale, con focus su operai, cantieri e recruiting. Approccio rapido, concreto e senza frizioni. Per trovaci basta cercare: Inoperando.">
+<meta name="keywords" content="cerco lavoro, cerco personale, inoperando, lavoro, recruiting, offerte di lavoro, ricerca personale, operai, cantieri, lavoro operai, lavoro cantieri">
 <meta name="author" content="Inoperando">
 <meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+
 <link rel="canonical" href="https://inoperando.it/">
+
+<!-- Open Graph -->
+
+<meta property="og:title" content="Inoperando – Cerchi lavoro o personale?">
+<meta property="og:description" content="Sistema operativo per lavoro, personale, operai e cantieri. Per trovaci basta cercare: Inoperando.">
+<meta property="og:url" content="https://inoperando.it/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://inoperando.it/og-image.jpg">
+
+<!-- Twitter Card -->
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Inoperando – Cerchi lavoro o personale?">
+<meta name="twitter:description" content="Lavoro, personale, operai e cantieri. Cerca: Inoperando.">
+<meta name="twitter:image" content="https://inoperando.it/og-image.jpg">
+
+<!-- Fonts -->
+
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Schema JSON-LD -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.inoperando.it/#organization",
+      "name": "Inoperando",
+      "url": "https://www.inoperando.it",
+      "description": "Sistema operativo che connette chi cerca lavoro e chi cerca personale, con focus su operai e cantieri.",
+      "logo": "https://www.inoperando.it/logo.png",
+      "sameAs": [
+        "https://www.youtube.com/@inoperando",
+        "https://www.instagram.com/inoperando",
+        "https://www.tiktok.com/@inoperando"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.inoperando.it/#website",
+      "url": "https://www.inoperando.it",
+      "name": "Inoperando",
+      "publisher": {
+        "@id": "https://www.inoperando.it/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.google.com/search?q=Inoperando+{search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.inoperando.it/#services",
+      "serviceType": [
+        "Cerco lavoro",
+        "Cerco personale",
+        "Ricerca operai",
+        "Personale per cantieri"
+      ],
+      "provider": {
+        "@id": "https://www.inoperando.it/#organization"
+      },
+      "areaServed": "Italia",
+      "description": "Servizi per chi cerca lavoro, personale, operai e personale per cantieri."
+    }
+  ]
+}
+</script>
 
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -122,7 +202,10 @@ position: relative; display: flex; flex-direction: column; align-items: flex-sta
 padding: 36px 32px; background: var(--mid); border: 1px solid var(--line);
 border-radius: 4px; cursor: pointer; text-decoration: none; overflow: hidden;
 transition: border-color 0.25s, transform 0.25s;
+animation: breathe 3.6s ease-in-out infinite;
 }
+.cta-card:nth-child(2) { animation-delay: 1.8s; }
+.cta-card:hover { animation-play-state: paused; }
 .cta-card::before {
 content: ''; position: absolute; inset: 0;
 background: linear-gradient(135deg, rgba(90,169,217,0.10) 0%, transparent 60%);
@@ -357,6 +440,10 @@ footer a:hover { color: var(--orange); }
 }
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes breathe {
+  0%, 100% { transform: scale(1);        box-shadow: 0 0 0 0 rgba(90,169,217,0); }
+  50%       { transform: scale(1.018);   box-shadow: 0 0 18px 2px rgba(90,169,217,0.10); }
+}
 
 @media (max-width: 600px) {
 header { padding: 12px 20px; }
@@ -379,6 +466,7 @@ footer { padding: 20px 24px; margin-top: 20px; }
 .perche-step-text { font-size: 0.85rem; }
 }
 </style>
+
 </head>
 <body>
 
@@ -400,7 +488,7 @@ footer { padding: 20px 24px; margin-top: 20px; }
   <h1>Selezioniamo<br>personale <em>e</em> <span class="blue">aziende</span></h1>
 
   <div class="cta-grid">
-    <a class="cta-card" href="inoperando-form.html">
+    <a class="cta-card" href="hub-candidati.html">
       <div class="card-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
@@ -412,18 +500,24 @@ footer { padding: 20px 24px; margin-top: 20px; }
       <div class="card-arrow">↗</div>
     </a>
 
-    <a class="cta-card" href="inoperando-aziende.html">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+```
+<a class="cta-card" href="hub-aziende.html">
+  <div class="card-icon">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+```
+
   <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
   <circle cx="12" cy="12" r="3"/>
 </svg>
 
-      </div>
-      <div class="card-title">Cerchi operai?</div>
-      <div class="card-desc">Compila la scheda bisogno.</div>
-      <div class="card-arrow">↗</div>
-    </a>
+```
+  </div>
+  <div class="card-title">Cerchi personale?</div>
+  <div class="card-desc">Compila la scheda bisogno.</div>
+  <div class="card-arrow">↗</div>
+</a>
+```
+
   </div>
 
   <div class="agency-msg">non siamo un portale, non siamo un'agenzia</div>
@@ -433,6 +527,7 @@ footer { padding: 20px 24px; margin-top: 20px; }
 </main>
 
 <!-- PERCHÉ SEZIONE -->
+
 <section class="perche" id="perche">
   <div class="perche-label">Perché</div>
   <div class="perche-steps">
@@ -458,11 +553,12 @@ footer { padding: 20px 24px; margin-top: 20px; }
 </section>
 
 <!-- CONTATTI SEZIONE -->
+
 <section class="contatti" id="contatti">
   <div class="contatti-label">Contatti</div>
   <div class="contatti-content">
     <div class="contatti-item">
-      <a href="contatto.html">info@inoperando.it</a>
+      <a href="contatto.html"><span class="__cf_email__" data-cfemail="6900070f0629000706190c1b08070d0647001d">[email&#160;protected]</span></a>
       <small>Email</small>
     </div>
   </div>
@@ -476,22 +572,15 @@ footer { padding: 20px 24px; margin-top: 20px; }
 </footer>
 
 <!-- Cookie banner -->
+
 <div class="cookie-banner" id="cookieBanner">
   <p>Questo sito utilizza cookie tecnici per garantire il corretto funzionamento. <a href="cookie.html">Scopri di più</a></p>
   <button onclick="document.getElementById('cookieBanner').style.display='none'">OK</button>
 </div>
 
-<script>
-const obs = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 80);
-      obs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.15 });
-document.querySelectorAll('.step, .perche-step').forEach(s => obs.observe(s));
-</script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
-</body>
-</html>
+const obs = new IntersectionObserver(entries => {
+entries.forEach((e, i) => {
+if (e.isIntersecting) {
+setTimeout(() => e.target.classList
