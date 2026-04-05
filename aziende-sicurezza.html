@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inoperando – Richiesta figure sicurezza</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --orange: #5AA9D9; --orange-dim: rgba(90,169,217,0.12); --orange-border: rgba(90,169,217,0.3);
+  --dark: #0F0F0D; --mid: #161613; --surface: #1C1C18; --surface2: #222220;
+  --light: #F0EBE1; --muted: #6B6760; --line: rgba(255,255,255,0.07); --focus: rgba(90,169,217,0.35);
+}
+html { scroll-behavior: smooth; }
+body { background: var(--dark); color: var(--light); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 300; min-height: 100vh; overflow-x: hidden; }
+body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); opacity: 0.025; pointer-events: none; z-index: 0; }
+header { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(15,15,13,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.logo { display: flex; align-items: center; text-decoration: none; margin-left: -20px; }
+.logo-mark { height: 60px; width: auto; flex-shrink: 0; object-fit: contain; }
+nav { display: flex; gap: 20px; align-items: center; margin-left: auto; }
+nav a { color: var(--muted); text-decoration: none; font-size: 0.45rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+nav a:hover { color: var(--light); }
+.progress-wrap { position: sticky; top: 61px; z-index: 99; background: var(--mid); border-bottom: 1px solid var(--line); padding: 0 48px; }
+.progress-bar { height: 2px; background: var(--orange); transition: width 0.4s ease; width: 0%; }
+.page { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; padding: 56px 24px 100px; }
+.form-hero { margin-bottom: 56px; animation: fadeUp 0.6s 0.1s both; }
+.form-hero .tag { display: inline-flex; align-items: center; gap: 8px; background: var(--orange-dim); border: 1px solid var(--orange-border); color: var(--orange); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 14px; border-radius: 2px; margin-bottom: 20px; }
+.form-hero .tag::before { content: ''; display: inline-block; width: 5px; height: 5px; background: var(--orange); border-radius: 50%; }
+.form-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 0.95; letter-spacing: 0.02em; color: var(--light); }
+.form-hero h1 em { font-style: normal; color: var(--orange); }
+.form-hero p { margin-top: 16px; font-size: 0.88rem; color: var(--muted); line-height: 1.65; max-width: 480px; }
+.section { margin-bottom: 48px; animation: fadeUp 0.5s both; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.section-header { display: flex; align-items: center; gap: 14px; background: var(--surface); padding: 16px 24px; border-bottom: 1px solid var(--line); }
+.section-num { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: var(--orange); letter-spacing: 0.1em; min-width: 28px; }
+.section-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.05rem; letter-spacing: 0.08em; color: var(--light); text-transform: uppercase; }
+.section-body { padding: 24px; display: flex; flex-direction: column; gap: 20px; background: var(--mid); }
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field label { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+input[type="text"], input[type="email"], input[type="number"], textarea, select { background: var(--surface2); border: 1px solid var(--line); color: var(--light); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.92rem; font-weight: 300; padding: 12px 16px; border-radius: 3px; width: 100%; outline: none; transition: border-color 0.2s, background 0.2s; -webkit-appearance: none; }
+input:focus, textarea:focus, select:focus { border-color: var(--focus); background: #1e1e1a; }
+input::placeholder, textarea::placeholder { color: #42423e; }
+textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6760' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; cursor: pointer; }
+select option { background: #222220; }
+.checkbox-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 12px; }
+@media (max-width: 680px) { .checkbox-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .checkbox-grid { grid-template-columns: 1fr; } }
+.check-label { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: var(--light); cursor: pointer; padding: 8px 12px; border-radius: 3px; border: 1px solid var(--line); background: var(--surface2); transition: border-color 0.2s, background 0.2s; user-select: none; }
+.check-label:hover { border-color: var(--orange-border); background: #1e1e1a; }
+.check-label input[type="checkbox"] { display: none; }
+.check-box { width: 16px; height: 16px; min-width: 16px; border: 1px solid var(--muted); border-radius: 2px; display: flex; align-items: center; justify-content: center; transition: background 0.15s, border-color 0.15s; }
+.check-label input:checked ~ .check-box { background: var(--orange); border-color: var(--orange); }
+.check-box::after { content: ''; width: 5px; height: 3px; border-left: 1.5px solid var(--dark); border-bottom: 1.5px solid var(--dark); transform: rotate(-45deg) translateY(-1px); display: none; }
+.check-label input:checked ~ .check-box::after { display: block; }
+.consent-label { display: flex; align-items: flex-start; gap: 12px; font-size: 0.85rem; color: var(--muted); cursor: pointer; line-height: 1.5; }
+.consent-label input[type="checkbox"] { display: none; }
+.consent-box { width: 18px; height: 18px; min-width: 18px; margin-top: 2px; border: 1px solid var(--muted); border-radius: 2px; display: flex; align-items: center; justify-content: center; transition: background 0.15s, border-color 0.15s; }
+.consent-label input:checked ~ .consent-box { background: var(--orange); border-color: var(--orange); }
+.consent-box::after { content: ''; width: 6px; height: 4px; border-left: 1.5px solid var(--dark); border-bottom: 1.5px solid var(--dark); transform: rotate(-45deg) translateY(-1px); display: none; }
+.consent-label input:checked ~ .consent-box::after { display: block; }
+.submit-wrap { margin-top: 12px; text-align: right; animation: fadeUp 0.5s 0.8s both; }
+button[type="submit"] { display: inline-flex; align-items: center; gap: 12px; background: var(--orange); color: var(--dark); font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.12em; padding: 16px 36px; border: none; border-radius: 3px; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+button[type="submit"]:hover { background: #ff5c12; transform: translateY(-2px); }
+button[type="submit"] svg { width: 18px; height: 18px; stroke: var(--dark); fill: none; stroke-width: 2; stroke-linecap: round; }
+footer { position: relative; z-index: 1; text-align: center; padding: 24px; border-top: 1px solid var(--line); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--orange); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 580px) {
+  header { padding: 16px 20px; } .logo { margin-left: 0; } .logo-mark { height: 45px; }
+  nav { gap: 12px; } nav a { font-size: 0.4rem; }
+  .progress-wrap { padding: 0 20px; } .page { padding: 36px 16px 80px; }
+  .field-row { grid-template-columns: 1fr; } .section-body { padding: 18px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html"><img src="logo.png" class="logo-mark" alt="logo"></a>
+  <nav>
+    <a href="index.html#perche">Perché</a>
+    <a href="index.html#come-funziona">Come funziona</a>
+    <a href="contatto.html">Contatti</a>
+  </nav>
+</header>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<div class="page">
+  <div class="form-hero">
+    <div class="tag">Cerchi figure sicurezza?</div>
+    <h1>Richiesta<br><em>sicurezza</em></h1>
+    <p>Dicci che figura ti serve e in quale contesto opera. Troviamo il profilo con le qualifiche giuste.</p>
+  </div>
+
+  <form action="salva_azienda_sicurezza.php" method="post" id="mainForm">
+
+    <!-- 01 DATI AZIENDA -->
+    <div class="section" style="animation-delay:0.15s">
+      <div class="section-header"><span class="section-num">01</span><span class="section-title">Dati azienda</span></div>
+      <div class="section-body">
+        <div class="field-row">
+          <div class="field"><label>Nome azienda</label><input type="text" name="nome_azienda" placeholder="Rossi Costruzioni Srl" required></div>
+          <div class="field"><label>Partita IVA</label><input type="text" name="piva" placeholder="IT 12345678901" required></div>
+        </div>
+        <div class="field"><label>Comune sede legale</label><input type="text" name="comune" placeholder="Brescia" required></div>
+        <div class="field-row">
+          <div class="field"><label>Nome referente</label><input type="text" name="referente" placeholder="Luca Rossi" required></div>
+          <div class="field"><label>Telefono referente</label><input type="text" name="telefono_referente" placeholder="+39 030 1234567" required></div>
+        </div>
+        <div class="field"><label>Email referente</label><input type="email" name="email_referente" placeholder="l.rossi@azienda.it" required></div>
+      </div>
+    </div>
+
+    <!-- 02 FIGURA RICHIESTA -->
+    <div class="section" style="animation-delay:0.22s">
+      <div class="section-header"><span class="section-num">02</span><span class="section-title">Figura richiesta</span></div>
+      <div class="section-body">
+        <div class="field">
+          <label>Ruolo cercato</label>
+          <select name="ruolo_cercato">
+            <option value="rspp">RSPP – Responsabile Servizio Prevenzione e Protezione</option>
+            <option value="aspp">ASPP – Addetto Servizio Prevenzione e Protezione</option>
+            <option value="csp">Coordinatore Sicurezza in Progettazione (CSP)</option>
+            <option value="cse">Coordinatore Sicurezza in Esecuzione (CSE)</option>
+            <option value="hse_manager">HSE Manager</option>
+            <option value="hse_specialist">HSE Specialist / Tecnico HSE</option>
+            <option value="addetto_sicurezza">Addetto Sicurezza generico</option>
+            <option value="altro">Altro</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Numero di persone</label><input type="number" name="numero" placeholder="1" min="1" required></div>
+          <div class="field"><label>Esperienza minima richiesta (anni)</label><input type="number" name="esperienza_minima" placeholder="3" min="0"></div>
+        </div>
+        <div class="field"><label>Descrivi il contesto e le responsabilità</label><textarea name="descrizione" placeholder="Tipo di azienda, dimensioni, attività, cosa dovrà fare la figura…" required></textarea></div>
+      </div>
+    </div>
+
+    <!-- 03 QUALIFICHE RICHIESTE -->
+    <div class="section" style="animation-delay:0.29s">
+      <div class="section-header"><span class="section-num">03</span><span class="section-title">Qualifiche e certificazioni richieste</span></div>
+      <div class="section-body">
+        <div class="checkbox-grid">
+          <label class="check-label"><input type="checkbox" name="qualifiche" value="Moduli RSPP A+B+C"><span class="check-box"></span>Moduli RSPP A+B+C</label>
+          <label class="check-label"><input type="checkbox" name="qualifiche" value="Coordinatore CSP/CSE"><span class="check-box"></span>Coordinatore CSP/CSE</label>
+          <label class="check-label"><input type="checkbox" name="qualifiche" value="Antincendio rischio alto"><span class="check-box"></span>Antincendio rischio alto</label>
+          <label class="check-label"><input type="checkbox" name="qualifiche" value="Primo soccorso"><span class="check-box"></span>Primo soccorso</label>
+          <label class="check-label"><input type="checkbox" name="qualifiche" value="Lavori in quota"><span class="check-box"></span>Lavori in quota</label>
+          <label class="check-label"><input type="checkbox" name="qualifiche" value="Spazi confinati"><span class="check-box"></span>Spazi confinati</label>
+          <label class="check-label"><input type="checkbox" name="qualifiche" value="ISO 45001"><span class="check-box"></span>ISO 45001</label>
+          <label class="check-label"><input type="checkbox" name="qualifiche" value="Redazione DVR"><span class="check-box"></span>Redazione DVR</label>
+          <label class="check-label"><input type="checkbox" name="qualifiche" value="Redazione POS/PSC"><span class="check-box"></span>Redazione POS/PSC</label>
+        </div>
+        <div class="field"><label>Altre qualifiche (specificare)</label><input type="text" name="qualifiche_altro" placeholder="NEBOSH, certificazioni specifiche…"></div>
+      </div>
+    </div>
+
+    <!-- 04 SETTORE AZIENDALE -->
+    <div class="section" style="animation-delay:0.36s">
+      <div class="section-header"><span class="section-num">04</span><span class="section-title">Settore aziendale</span></div>
+      <div class="section-body">
+        <div class="field">
+          <label>In quale settore opera la vostra azienda?</label>
+          <select name="settore_azienda">
+            <option value="edilizia">Edilizia / costruzioni</option>
+            <option value="manifattura">Industria manifatturiera</option>
+            <option value="impianti">Impianti industriali</option>
+            <option value="logistica">Logistica / magazzino</option>
+            <option value="chimica">Chimica / farmaceutica</option>
+            <option value="energia">Energia / utilities</option>
+            <option value="alimentare">Alimentare</option>
+            <option value="metalmeccanica">Metalmeccanica</option>
+            <option value="altro">Altro</option>
+          </select>
+        </div>
+        <div class="field"><label>Numero dipendenti azienda</label><input type="text" name="num_dipendenti" placeholder="15, 80, 300…"></div>
+      </div>
+    </div>
+
+    <!-- 05 DOVE E QUANDO -->
+    <div class="section" style="animation-delay:0.43s">
+      <div class="section-header"><span class="section-num">05</span><span class="section-title">Dove e quando</span></div>
+      <div class="section-body">
+        <div class="field"><label>Dove opera la figura (città/regione)</label><input type="text" name="luogo" placeholder="Brescia, Puglia, cantieri vari…" required></div>
+        <div class="field-row">
+          <div class="field"><label>Quando serve iniziare</label><input type="text" name="inizio" placeholder="Subito / 01/06/2026" required></div>
+          <div class="field">
+            <label>Tipo di rapporto</label>
+            <select name="contratto">
+              <option value="dipendente_indeterminato">Dipendente indeterminato</option>
+              <option value="dipendente_determinato">Dipendente determinato</option>
+              <option value="consulenza_piva">Consulenza / P.IVA</option>
+              <option value="altro">Altro</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>La figura deve essere disponibile a trasferte?</label>
+          <select name="trasferte">
+            <option value="no">No, sede fissa</option>
+            <option value="occasionale">Occasionalmente</option>
+            <option value="si">Sì, frequentemente</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 URGENZA -->
+    <div class="section" style="animation-delay:0.5s">
+      <div class="section-header"><span class="section-num">06</span><span class="section-title">Urgenza</span></div>
+      <div class="section-body">
+        <div class="field">
+          <label>Quando ti serve la figura?</label>
+          <select name="urgenza">
+            <option value="immediato">Immediato</option>
+            <option value="entro_7_giorni">Entro 7 giorni</option>
+            <option value="entro_30_giorni">Entro 30 giorni</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 NOTE -->
+    <div class="section" style="animation-delay:0.57s">
+      <div class="section-header"><span class="section-num">07</span><span class="section-title">Note aggiuntive</span></div>
+      <div class="section-body">
+        <div class="field"><label>Altro che dobbiamo sapere</label><textarea name="note" placeholder="Contesto specifico, criticità, preferenze, budget orientativo…"></textarea></div>
+      </div>
+    </div>
+
+    <!-- 08 CONSENSO -->
+    <div class="section" style="animation-delay:0.64s">
+      <div class="section-header"><span class="section-num">08</span><span class="section-title">Consenso</span></div>
+      <div class="section-body">
+        <label class="consent-label">
+          <input type="checkbox" name="consenso" required>
+          <span class="consent-box"></span>
+          Acconsento al trattamento dei dati personali come descritto nell'<a href="privacy.html" target="_blank">informativa privacy</a>.
+        </label>
+      </div>
+    </div>
+
+    <div class="submit-wrap">
+      <button type="submit">Invia la richiesta <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+    </div>
+  </form>
+</div>
+
+<footer>© 2026 Inoperando · <a href="mailto:info@inoperando.it">info@inoperando.it</a></footer>
+
+<script>
+const bar = document.getElementById('progressBar');
+function updateProgress() {
+  const form = document.getElementById('mainForm');
+  if (!form) return;
+  const el = form.getBoundingClientRect();
+  const pct = Math.min(100, (Math.max(0, window.scrollY - el.top + window.innerHeight) / (el.height + window.innerHeight)) * 100);
+  bar.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+updateProgress();
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.section').forEach(s => { s.style.opacity = '0'; s.style.transition = 'opacity 0.6s ease'; obs.observe(s); });
+</script>
+</body>
+</html>

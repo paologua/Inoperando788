@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inoperando – Candidatura Magazzino</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --orange: #5AA9D9; --orange-dim: rgba(90,169,217,0.12); --orange-border: rgba(90,169,217,0.3);
+  --dark: #0F0F0D; --mid: #161613; --surface: #1C1C18; --surface2: #222220;
+  --light: #F0EBE1; --muted: #6B6760; --line: rgba(255,255,255,0.07); --focus: rgba(90,169,217,0.35);
+}
+html { scroll-behavior: smooth; }
+body { background: var(--dark); color: var(--light); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 300; min-height: 100vh; overflow-x: hidden; }
+body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); opacity: 0.025; pointer-events: none; z-index: 0; }
+header { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(15,15,13,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.logo { display: flex; align-items: center; text-decoration: none; margin-left: -20px; }
+.logo-mark { height: 60px; width: auto; flex-shrink: 0; object-fit: contain; }
+nav { display: flex; gap: 20px; align-items: center; margin-left: auto; }
+nav a { color: var(--muted); text-decoration: none; font-size: 0.45rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+nav a:hover { color: var(--light); }
+.progress-wrap { position: sticky; top: 61px; z-index: 99; background: var(--mid); border-bottom: 1px solid var(--line); padding: 0 48px; }
+.progress-bar { height: 2px; background: var(--orange); transition: width 0.4s ease; width: 0%; }
+.page { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; padding: 56px 24px 100px; }
+.form-hero { margin-bottom: 56px; animation: fadeUp 0.6s 0.1s both; }
+.form-hero .tag { display: inline-flex; align-items: center; gap: 8px; background: var(--orange-dim); border: 1px solid var(--orange-border); color: var(--orange); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 14px; border-radius: 2px; margin-bottom: 20px; }
+.form-hero .tag::before { content: ''; display: inline-block; width: 5px; height: 5px; background: var(--orange); border-radius: 50%; }
+.form-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 0.95; letter-spacing: 0.02em; color: var(--light); }
+.form-hero h1 em { font-style: normal; color: var(--orange); }
+.form-hero p { margin-top: 16px; font-size: 0.88rem; color: var(--muted); line-height: 1.65; max-width: 480px; }
+.section { margin-bottom: 48px; animation: fadeUp 0.5s both; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.section-header { display: flex; align-items: center; gap: 14px; background: var(--surface); padding: 16px 24px; border-bottom: 1px solid var(--line); }
+.section-num { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: var(--orange); letter-spacing: 0.1em; min-width: 28px; }
+.section-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.05rem; letter-spacing: 0.08em; color: var(--light); text-transform: uppercase; }
+.section-body { padding: 24px; display: flex; flex-direction: column; gap: 20px; background: var(--mid); }
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field label { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+input[type="text"], input[type="email"], input[type="number"], textarea, select { background: var(--surface2); border: 1px solid var(--line); color: var(--light); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.92rem; font-weight: 300; padding: 12px 16px; border-radius: 3px; width: 100%; outline: none; transition: border-color 0.2s, background 0.2s; -webkit-appearance: none; }
+input:focus, textarea:focus, select:focus { border-color: var(--focus); background: #1e1e1a; }
+input::placeholder, textarea::placeholder { color: #42423e; }
+textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6760' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; cursor: pointer; }
+select option { background: #222220; }
+.checkbox-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 12px; }
+@media (max-width: 680px) { .checkbox-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .checkbox-grid { grid-template-columns: 1fr; } }
+.check-label { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: var(--light); cursor: pointer; padding: 8px 12px; border-radius: 3px; border: 1px solid var(--line); background: var(--surface2); transition: border-color 0.2s, background 0.2s; user-select: none; }
+.check-label:hover { border-color: var(--orange-border); background: #1e1e1a; }
+.check-label input[type="checkbox"] { display: none; }
+.check-box { width: 16px; height: 16px; min-width: 16px; border: 1px solid var(--muted); border-radius: 2px; display: flex; align-items: center; justify-content: center; transition: background 0.15s, border-color 0.15s; }
+.check-label input:checked ~ .check-box { background: var(--orange); border-color: var(--orange); }
+.check-box::after { content: ''; width: 5px; height: 3px; border-left: 1.5px solid var(--dark); border-bottom: 1.5px solid var(--dark); transform: rotate(-45deg) translateY(-1px); display: none; }
+.check-label input:checked ~ .check-box::after { display: block; }
+.consent-label { display: flex; align-items: flex-start; gap: 12px; font-size: 0.85rem; color: var(--muted); cursor: pointer; line-height: 1.5; }
+.consent-label input[type="checkbox"] { display: none; }
+.consent-box { width: 18px; height: 18px; min-width: 18px; margin-top: 2px; border: 1px solid var(--muted); border-radius: 2px; display: flex; align-items: center; justify-content: center; transition: background 0.15s, border-color 0.15s; }
+.consent-label input:checked ~ .consent-box { background: var(--orange); border-color: var(--orange); }
+.consent-box::after { content: ''; width: 6px; height: 4px; border-left: 1.5px solid var(--dark); border-bottom: 1.5px solid var(--dark); transform: rotate(-45deg) translateY(-1px); display: none; }
+.consent-label input:checked ~ .consent-box::after { display: block; }
+.submit-wrap { margin-top: 12px; text-align: right; animation: fadeUp 0.5s 0.8s both; }
+button[type="submit"] { display: inline-flex; align-items: center; gap: 12px; background: var(--orange); color: var(--dark); font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.12em; padding: 16px 36px; border: none; border-radius: 3px; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+button[type="submit"]:hover { background: #ff5c12; transform: translateY(-2px); }
+button[type="submit"] svg { width: 18px; height: 18px; stroke: var(--dark); fill: none; stroke-width: 2; stroke-linecap: round; }
+footer { position: relative; z-index: 1; text-align: center; padding: 24px; border-top: 1px solid var(--line); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--orange); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 580px) {
+  header { padding: 16px 20px; } .logo { margin-left: 0; } .logo-mark { height: 45px; }
+  nav { gap: 12px; } nav a { font-size: 0.4rem; }
+  .progress-wrap { padding: 0 20px; } .page { padding: 36px 16px 80px; }
+  .field-row { grid-template-columns: 1fr; } .section-body { padding: 18px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html"><img src="logo.png" class="logo-mark" alt="logo"></a>
+  <nav>
+    <a href="index.html#perche">Perché</a>
+    <a href="index.html#come-funziona">Come funziona</a>
+    <a href="contatto.html">Contatti</a>
+  </nav>
+</header>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<div class="page">
+  <div class="form-hero">
+    <div class="tag">Logistica e magazzino</div>
+    <h1>Candidatura<br><em>magazzino</em></h1>
+    <p>Patente muletto, sistemi WMS, turni: ogni dettaglio conta. Compilalo con precisione.</p>
+  </div>
+
+  <form action="salva_magazzino.php" method="post" id="mainForm">
+
+    <!-- 01 DATI PERSONALI -->
+    <div class="section" style="animation-delay:0.15s">
+      <div class="section-header"><span class="section-num">01</span><span class="section-title">Dati personali</span></div>
+      <div class="section-body">
+        <div class="field-row">
+          <div class="field"><label>Nome e cognome</label><input type="text" name="nome" placeholder="Mario Rossi" required></div>
+          <div class="field"><label>Età</label><input type="number" name="eta" placeholder="30" min="16" max="80" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Comune di residenza</label><input type="text" name="comune" placeholder="Brescia" required></div>
+          <div class="field"><label>Telefono</label><input type="text" name="telefono" placeholder="+39 333 1234567" required></div>
+        </div>
+        <div class="field"><label>Email</label><input type="email" name="email" placeholder="mario@email.it" required></div>
+      </div>
+    </div>
+
+    <!-- 02 RUOLO -->
+    <div class="section" style="animation-delay:0.22s">
+      <div class="section-header"><span class="section-num">02</span><span class="section-title">Ruolo cercato</span></div>
+      <div class="section-body">
+        <div class="field">
+          <label>Figura principale</label>
+          <select name="ruolo">
+            <option value="magazziniere">Magazziniere</option>
+            <option value="carrellista">Carrellista</option>
+            <option value="addetto_picking">Addetto picking</option>
+            <option value="addetto_spedizioni">Addetto spedizioni / ricevimento</option>
+            <option value="responsabile_magazzino">Responsabile di magazzino</option>
+            <option value="logista">Addetto logistica</option>
+            <option value="altro">Altro</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Anni di esperienza</label><input type="number" name="anni_esperienza" placeholder="4" min="0"></div>
+          <div class="field"><label>Ultimo settore merceologico</label><input type="text" name="settore_merce" placeholder="Alimentare, ricambi auto, edilizia…"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 PATENTE MULETTO -->
+    <div class="section" style="animation-delay:0.29s">
+      <div class="section-header"><span class="section-num">03</span><span class="section-title">Patente muletto e mezzi</span></div>
+      <div class="section-body">
+        <div class="checkbox-grid">
+          <label class="check-label"><input type="checkbox" name="muletto" value="Frontale controbilanciato"><span class="check-box"></span>Frontale controbilanciato</label>
+          <label class="check-label"><input type="checkbox" name="muletto" value="Retrattile"><span class="check-box"></span>Retrattile</label>
+          <label class="check-label"><input type="checkbox" name="muletto" value="Transpallet elettrico"><span class="check-box"></span>Transpallet elettrico</label>
+          <label class="check-label"><input type="checkbox" name="muletto" value="Commissionatore verticale"><span class="check-box"></span>Commissionatore verticale</label>
+          <label class="check-label"><input type="checkbox" name="muletto" value="Carrello elevatore a gas"><span class="check-box"></span>Carrello a gas</label>
+          <label class="check-label"><input type="checkbox" name="muletto" value="Patentino ministeriale (Accordo Stato-Regioni)"><span class="check-box"></span>Patentino ministeriale</label>
+        </div>
+        <div class="field">
+          <label>Anni di utilizzo carrelli elevatori</label>
+          <input type="text" name="anni_muletto" placeholder="3 anni, occasionale…">
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 SISTEMI E STRUMENTI -->
+    <div class="section" style="animation-delay:0.36s">
+      <div class="section-header"><span class="section-num">04</span><span class="section-title">Sistemi e strumenti</span></div>
+      <div class="section-body">
+        <div class="checkbox-grid">
+          <label class="check-label"><input type="checkbox" name="sistemi" value="WMS (generico)"><span class="check-box"></span>WMS (generico)</label>
+          <label class="check-label"><input type="checkbox" name="sistemi" value="SAP WM/EWM"><span class="check-box"></span>SAP WM/EWM</label>
+          <label class="check-label"><input type="checkbox" name="sistemi" value="AS400"><span class="check-box"></span>AS400</label>
+          <label class="check-label"><input type="checkbox" name="sistemi" value="Gestionale proprio (RF scanner)"><span class="check-box"></span>RF Scanner</label>
+          <label class="check-label"><input type="checkbox" name="sistemi" value="Excel base"><span class="check-box"></span>Excel base</label>
+          <label class="check-label"><input type="checkbox" name="sistemi" value="Codici a barre / barcode"><span class="check-box"></span>Codici a barre</label>
+        </div>
+        <div class="field"><label>Altri sistemi usati</label><input type="text" name="sistemi_altro" placeholder="Specificare…"></div>
+      </div>
+    </div>
+
+    <!-- 05 ATTIVITÀ SVOLTE -->
+    <div class="section" style="animation-delay:0.43s">
+      <div class="section-header"><span class="section-num">05</span><span class="section-title">Attività svolte</span></div>
+      <div class="section-body">
+        <div class="checkbox-grid">
+          <label class="check-label"><input type="checkbox" name="attivita" value="Carico / scarico"><span class="check-box"></span>Carico / scarico</label>
+          <label class="check-label"><input type="checkbox" name="attivita" value="Picking manuale"><span class="check-box"></span>Picking manuale</label>
+          <label class="check-label"><input type="checkbox" name="attivita" value="Picking vocale / RF"><span class="check-box"></span>Picking vocale / RF</label>
+          <label class="check-label"><input type="checkbox" name="attivita" value="Inventario"><span class="check-box"></span>Inventario</label>
+          <label class="check-label"><input type="checkbox" name="attivita" value="Gestione resi"><span class="check-box"></span>Gestione resi</label>
+          <label class="check-label"><input type="checkbox" name="attivita" value="Etichettatura / imballo"><span class="check-box"></span>Etichettatura / imballo</label>
+          <label class="check-label"><input type="checkbox" name="attivita" value="Spedizioni corrieri"><span class="check-box"></span>Spedizioni corrieri</label>
+          <label class="check-label"><input type="checkbox" name="attivita" value="Ricevimento merci"><span class="check-box"></span>Ricevimento merci</label>
+          <label class="check-label"><input type="checkbox" name="attivita" value="Coordinamento squadra"><span class="check-box"></span>Coordinamento squadra</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 DISPONIBILITÀ -->
+    <div class="section" style="animation-delay:0.5s">
+      <div class="section-header"><span class="section-num">06</span><span class="section-title">Disponibilità</span></div>
+      <div class="section-body">
+        <div class="field-row">
+          <div class="field"><label>Da quando puoi iniziare</label><input type="text" name="inizio" placeholder="Subito / 01/04/2026"></div>
+          <div class="field">
+            <label>Contratto desiderato</label>
+            <select name="contratto">
+              <option value="indeterminato">Indeterminato</option>
+              <option value="determinato">Determinato</option>
+              <option value="apprendistato">Apprendistato</option>
+              <option value="altro">Altro</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Disponibilità turni</label>
+            <select name="turni">
+              <option value="giornaliero">Solo giornaliero</option>
+              <option value="due_turni">Due turni</option>
+              <option value="tre_turni">Tre turni</option>
+              <option value="notte">Notte</option>
+              <option value="weekend">Weekend</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Lavoro fisicamente impegnativo</label>
+            <select name="fisico">
+              <option value="si">Sì, nessun problema</option>
+              <option value="limitato">Con limitazioni</option>
+              <option value="no">Preferisco evitare</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 ASPETTATIVE ECONOMICHE -->
+    <div class="section" style="animation-delay:0.57s">
+      <div class="section-header"><span class="section-num">07</span><span class="section-title">Aspettative economiche</span></div>
+      <div class="section-body">
+        <div class="field-row">
+          <div class="field"><label>Retribuzione minima accettabile</label><input type="text" name="minima" placeholder="€ 1.500 netti/mese"></div>
+          <div class="field"><label>Retribuzione desiderata</label><input type="text" name="desiderata" placeholder="€ 1.800 netti/mese"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 CONSENSO -->
+    <div class="section" style="animation-delay:0.64s">
+      <div class="section-header"><span class="section-num">08</span><span class="section-title">Consenso</span></div>
+      <div class="section-body">
+        <label class="consent-label">
+          <input type="checkbox" name="consenso" required>
+          <span class="consent-box"></span>
+          Acconsento al trattamento dei dati personali come descritto nell'<a href="privacy.html" target="_blank">informativa privacy</a>.
+        </label>
+      </div>
+    </div>
+
+    <div class="submit-wrap">
+      <button type="submit">Invia candidatura <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+    </div>
+  </form>
+</div>
+
+<footer>© 2026 Inoperando · <a href="mailto:info@inoperando.it">info@inoperando.it</a></footer>
+
+<script>
+const bar = document.getElementById('progressBar');
+function updateProgress() {
+  const form = document.getElementById('mainForm');
+  if (!form) return;
+  const el = form.getBoundingClientRect();
+  const pct = Math.min(100, (Math.max(0, window.scrollY - el.top + window.innerHeight) / (el.height + window.innerHeight)) * 100);
+  bar.style.width = pct + '%';
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+updateProgress();
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.section').forEach(s => { s.style.opacity = '0'; s.style.transition = 'opacity 0.6s ease'; obs.observe(s); });
+</script>
+</body>
+</html>
