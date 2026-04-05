@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contattaci – Inoperando</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0F0F0D;
+    color: #F5F0E8;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 40px 20px;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #1A1A17;
+    padding: 48px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: #5AA9D9;
+    margin-bottom: 24px;
+  }
+  label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    color: #5AA9D9;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+    background: #222;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 8px;
+    font-family: inherit;
+  }
+  button {
+    margin-top: 24px;
+    background: #5AA9D9;
+    color: #0F0F0D;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  button:hover {
+    background: #ff5c12;
+  }
+  .back {
+    display: inline-block;
+    margin-top: 20px;
+    color: #5AA9D9;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Contattaci</h1>
+  <form action="invia_contatto.php" method="post">
+    <label>Nome e cognome</label>
+    <input type="text" name="nome" required>
+    
+    <label>Email</label>
+    <input type="email" name="email" required>
+    
+    <label>Messaggio</label>
+    <textarea name="messaggio" rows="5" required></textarea>
+    
+    <button type="submit">Invia</button>
+  </form>
+  <a href="index.html" class="back">← Torna alla home</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://inoperando.it/sitemap.xml

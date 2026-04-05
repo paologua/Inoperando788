@@ -1,0 +1,497 @@
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Search Console -->
+<meta name="google-site-verification" content="googlec433f743073de518.html">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<title>Inoperando – Selezione personale e aziende | Lavoro e recruiting</title>
+<meta name="description" content="Selezioniamo personale e aziende nel settore industriale edile manutenzione impianti produzione manifattura gestione personale attivo sicurezza compliance. Matching tra candidati e aziende. Paghi solo se assumi. Approccio concreto, rapido e affidabile.">
+<meta name="keywords" content="selezione personale, recruiting operai, cercare lavoro, assumere operai, matching candidati aziende, agenzia recruiting industriale">
+<meta name="author" content="Inoperando">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://inoperando.it/">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --orange: #5AA9D9;
+  --dark: #0F0F0D;
+  --mid: #1A1A17;
+  --surface: #1C1C18;
+  --light: #F5F0E8;
+  --muted: #6B6760;
+  --line: rgba(255,255,255,0.07);
+}
+
+html, body { 
+  background: var(--dark); 
+  color: var(--light); 
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  overflow-x: hidden; 
+}
+
+body::before {
+content: ''; position: fixed; inset: 0;
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+opacity: 0.03; pointer-events: none; z-index: 0;
+}
+body::after {
+content: ''; position: fixed; top: -20%; right: -10%; width: 55vw; height: 120vh;
+background: linear-gradient(160deg, rgba(90,169,217,0.07) 0%, transparent 60%);
+pointer-events: none; z-index: 0;
+}
+
+/* ── HEADER ── */
+header {
+position: sticky; top: 0; z-index: 100;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 16px 48px;
+background: rgba(15,15,13,0.92);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid var(--line);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-left: -20px;
+}
+.logo-mark {
+  height: 45px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+nav { display: flex; gap: 20px; align-items: center; }
+nav a { color: var(--muted); text-decoration: none; font-size: 0.55rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+nav a:hover { color: var(--light); }
+
+/* ── HERO ── */
+.hero {
+position: relative; z-index: 10;
+min-height: calc(100vh - 77px);
+display: flex; flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 80px 48px 80px;
+text-align: center;
+}
+.tag {
+display: inline-block;
+color: var(--light);
+font-size: 0.75rem;
+font-weight: 500;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+margin-bottom: 20px;
+opacity: 0;
+animation: fadeUp 0.6s 0.2s forwards;
+}
+h1 {
+font-family: 'Bebas Neue', sans-serif;
+font-size: clamp(3.2rem, 7vw, 7rem);
+line-height: 0.95; letter-spacing: 0.02em; color: var(--light); max-width: 860px;
+margin: 0 auto;
+opacity: 0;
+animation: fadeUp 0.7s 0.35s forwards;
+margin-bottom: 80px;
+}
+h1 em { font-style: normal; color: var(--orange); }
+h1 .blue { font-style: normal; color: var(--orange); }
+
+/* ── CTA CARDS ── */
+.cta-grid {
+display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+width: 100%; max-width: 680px;
+margin-top: 0;
+opacity: 0; animation: fadeUp 0.7s 0.45s forwards;
+}
+.cta-card {
+position: relative; display: flex; flex-direction: column; align-items: flex-start;
+padding: 36px 32px; background: var(--mid); border: 1px solid var(--line);
+border-radius: 4px; cursor: pointer; text-decoration: none; overflow: hidden;
+transition: border-color 0.25s, transform 0.25s;
+}
+.cta-card::before {
+content: ''; position: absolute; inset: 0;
+background: linear-gradient(135deg, rgba(90,169,217,0.10) 0%, transparent 60%);
+opacity: 0; transition: opacity 0.3s;
+}
+.cta-card:hover { border-color: rgba(90,169,217,0.45); transform: translateY(-3px); }
+.cta-card:hover::before { opacity: 1; }
+.cta-card:hover .card-arrow { transform: translate(3px, -3px); color: var(--orange); }
+.card-icon { width: 44px; height: 44px; background: rgba(90,169,217,0.13); border-radius: 3px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+.card-icon svg { width: 22px; height: 22px; stroke: var(--orange); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.card-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.04em; color: var(--light); line-height: 1; margin-bottom: 10px; }
+.card-desc { font-size: 0.85rem; font-weight: 400; color: var(--muted); line-height: 1.55; flex: 1; }
+.card-arrow { align-self: flex-end; margin-top: 24px; font-size: 1.1rem; color: var(--muted); transition: transform 0.25s, color 0.25s; }
+
+.agency-msg {
+  margin-top: 80px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--orange);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.55s forwards;
+}
+
+.sub {
+margin-top: 20px;
+font-size: 1rem;
+font-weight: 400;
+color: var(--muted);
+letter-spacing: 0.01em;
+max-width: 500px;
+margin-left: auto;
+margin-right: auto;
+line-height: 1.65;
+opacity: 0;
+animation: fadeUp 0.7s 0.65s forwards;
+}
+
+/* ── PERCHÉ SEZIONE ── */
+.perche {
+position: relative; z-index: 10;
+padding: 100px 48px;
+margin-top: 40px;
+border-top: 1px solid var(--line);
+border-bottom: 1px solid var(--line);
+background: var(--dark);
+}
+.perche-label {
+font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+color: var(--orange); margin-bottom: 48px;
+display: flex; align-items: center; justify-content: center; gap: 12px;
+}
+.perche-label::before, .perche-label::after { content: ''; width: 40px; height: 1px; background: var(--orange); opacity: 0.4; }
+
+.perche-steps {
+display: flex; flex-direction: column; gap: 0;
+width: 100%; max-width: 780px;
+margin: 0 auto;
+}
+.perche-step {
+display: flex;
+gap: 28px;
+align-items: flex-start;
+padding: 24px 0;
+border-bottom: 1px solid var(--line);
+opacity: 0;
+transform: translateY(16px);
+transition: opacity 0.5s, transform 0.5s;
+}
+.perche-step:last-child { border-bottom: none; }
+.perche-step.visible { opacity: 1; transform: translateY(0); }
+
+.perche-step-num {
+font-family: 'Bebas Neue', sans-serif;
+font-size: 2rem;
+line-height: 1;
+letter-spacing: 0.04em;
+color: var(--light);
+opacity: 0.9;
+min-width: 48px;
+padding-top: 2px;
+}
+.perche-step-text {
+font-size: 0.95rem;
+font-weight: 400;
+color: var(--orange);
+opacity: 0.35;
+line-height: 1.6;
+padding-top: 6px;
+}
+
+/* ── COME FUNZIONA ── */
+.how {
+position: relative; z-index: 10;
+padding: 100px 48px;
+margin-top: 40px;
+border-top: 1px solid var(--line);
+border-bottom: 1px solid var(--line);
+display: flex; flex-direction: column; align-items: center;
+background: var(--dark);
+}
+.how-label {
+font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+color: var(--orange); margin-bottom: 48px;
+display: flex; align-items: center; gap: 12px;
+}
+.how-label::before, .how-label::after { content: ''; width: 40px; height: 1px; background: var(--orange); opacity: 0.4; }
+
+.steps {
+display: flex; flex-direction: column; gap: 0;
+width: 100%; max-width: 580px;
+}
+.step {
+display: flex; gap: 28px; align-items: flex-start;
+padding: 24px 0;
+border-bottom: 1px solid var(--line);
+opacity: 0; transform: translateY(16px);
+transition: opacity 0.5s, transform 0.5s;
+}
+.step:last-child { border-bottom: none; }
+.step.visible { opacity: 1; transform: translateY(0); }
+
+.step-num {
+font-family: 'Bebas Neue', sans-serif;
+font-size: 2rem; line-height: 1; letter-spacing: 0.04em;
+color: var(--orange); opacity: 0.35; min-width: 36px;
+padding-top: 2px;
+}
+.step-text {
+font-size: 0.95rem; font-weight: 400; color: var(--light);
+line-height: 1.6; padding-top: 6px;
+}
+
+/* ── CONTATTI SEZIONE ── */
+.contatti {
+position: relative; z-index: 10;
+padding: 100px 48px;
+margin-top: 40px;
+border-top: 1px solid var(--line);
+border-bottom: 1px solid var(--line);
+background: var(--dark);
+text-align: center;
+}
+.contatti-label {
+font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+color: var(--orange); margin-bottom: 48px;
+display: flex; align-items: center; justify-content: center; gap: 12px;
+}
+.contatti-label::before, .contatti-label::after { content: ''; width: 40px; height: 1px; background: var(--orange); opacity: 0.4; }
+.contatti-content {
+max-width: 500px;
+margin: 0 auto;
+}
+.contatti-item {
+margin: 24px 0;
+font-size: 1.2rem;
+}
+.contatti-item a {
+color: var(--light);
+text-decoration: none;
+transition: color 0.2s;
+}
+.contatti-item a:hover {
+color: var(--orange);
+}
+.contatti-item small {
+display: block;
+font-size: 0.8rem;
+color: var(--muted);
+margin-top: 4px;
+}
+
+/* ── FOOTER ── */
+footer {
+position: relative; z-index: 10;
+display: flex; align-items: center; justify-content: center;
+padding: 20px 48px;
+margin-top: 40px;
+border-top: 1px solid var(--line);
+}
+.footer-content {
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 20px;
+width: 100%;
+max-width: 1200px;
+}
+footer p { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--orange); }
+
+/* Cookie banner */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(26,26,23,0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--line);
+  padding: 16px 24px;
+  z-index: 1000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 0.85rem;
+}
+.cookie-banner p {
+  margin: 0;
+  color: var(--muted);
+}
+.cookie-banner a {
+  color: var(--orange);
+  text-decoration: none;
+}
+.cookie-banner button {
+  background: var(--orange);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.cookie-banner button:hover {
+  background: #ff5c12;
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 600px) {
+header { padding: 12px 20px; }
+.logo { margin-left: 0; }
+.logo-mark { height: 28px; }
+nav { gap: 10px; }
+nav a { font-size: 0.45rem; letter-spacing: 0.06em; }
+.hero { padding: 60px 20px 50px; }
+h1 { margin-bottom: 40px; }
+.cta-grid { grid-template-columns: 1fr; gap: 20px; }
+.agency-msg { margin-top: 40px; font-size: 0.8rem; }
+.sub { font-size: 0.9rem; }
+.perche { padding: 50px 24px; margin-top: 20px; }
+.how { padding: 50px 24px; margin-top: 20px; }
+.contatti { padding: 50px 24px; margin-top: 20px; }
+footer { padding: 20px 24px; margin-top: 20px; }
+.footer-content { flex-direction: column; text-align: center; }
+.perche-step { gap: 16px; }
+.perche-step-num { font-size: 1.5rem; min-width: 36px; }
+.perche-step-text { font-size: 0.85rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    <img src="logo.png" class="logo-mark" alt="Inoperando logo">
+  </a>
+  <nav>
+    <a href="#perche">Perché</a>
+    <a href="#come-funziona">Come funziona</a>
+    <a href="contatto.html">Contatti</a>
+  </nav>
+</header>
+
+<main class="hero">
+
+  <div class="tag">operai in tutta Italia</div>
+
+  <h1>Selezioniamo<br>personale <em>e</em> <span class="blue">aziende</span></h1>
+
+  <div class="cta-grid">
+    <a class="cta-card" href="inoperando-form.html">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </div>
+      <div class="card-title">Cerchi lavoro?</div>
+      <div class="card-desc">Compila la tua identità operativa.</div>
+      <div class="card-arrow">↗</div>
+    </a>
+
+    <a class="cta-card" href="inoperando-aziende.html">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+  <circle cx="12" cy="12" r="3"/>
+</svg>
+
+      </div>
+      <div class="card-title">Cerchi operai?</div>
+      <div class="card-desc">Compila la scheda bisogno.</div>
+      <div class="card-arrow">↗</div>
+    </a>
+  </div>
+
+  <div class="agency-msg">non siamo un portale, non siamo un'agenzia</div>
+
+  <p class="sub">un approccio concreto, rapido e affidabile</p>
+
+</main>
+
+<!-- PERCHÉ SEZIONE -->
+<section class="perche" id="perche">
+  <div class="perche-label">Perché</div>
+  <div class="perche-steps">
+    <div class="perche-step"><span class="perche-step-num">01</span><span class="perche-step-text">Tutti cercano lavoro e le aziende non trovano personale</span></div>
+    <div class="perche-step"><span class="perche-step-num">02</span><span class="perche-step-text">I portali sono una discarica di annunci, i candidati fanno 1000 profili, 1000 upload, 1000 click. Nessun ritorno</span></div>
+    <div class="perche-step"><span class="perche-step-num">03</span><span class="perche-step-text">Le agenzie vivono di CV, non di assunzioni: quantità al posto della qualità</span></div>
+    <div class="perche-step"><span class="perche-step-num">04</span><span class="perche-step-text">Aziende e lavoratori spesso mentono e per questo nessuno si fida più</span></div>
+    <div class="perche-step"><span class="perche-step-num">05</span><span class="perche-step-text">Noi verifichiamo, filtriamo, confermiamo. Il rischio e le responsabilità sono tutti nostri</span></div>
+  </div>
+</section>
+
+<section class="how" id="come-funziona">
+  <div class="how-label">Come funziona</div>
+  <div class="steps">
+    <div class="step"><span class="step-num">01</span><span class="step-text">L'azienda compila la scheda bisogno</span></div>
+    <div class="step"><span class="step-num">02</span><span class="step-text">Il candidato compila la sua identità operativa</span></div>
+    <div class="step"><span class="step-num">03</span><span class="step-text">Facciamo il matching</span></div>
+    <div class="step"><span class="step-num">04</span><span class="step-text">Presentiamo solo profili coerenti</span></div>
+    <div class="step"><span class="step-num">05</span><span class="step-text">L'azienda richiede il colloquio</span></div>
+    <div class="step"><span class="step-num">06</span><span class="step-text">Registriamo l'esito</span></div>
+    <div class="step"><span class="step-num">07</span><span class="step-text">Paghi solo se assumi</span></div>
+  </div>
+</section>
+
+<!-- CONTATTI SEZIONE -->
+<section class="contatti" id="contatti">
+  <div class="contatti-label">Contatti</div>
+  <div class="contatti-content">
+    <div class="contatti-item">
+      <a href="contatto.html">info@inoperando.it</a>
+      <small>Email</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <p>© 2026 Inoperando · Tutti i diritti riservati</p>
+    <p><a href="privacy.html">Privacy</a> | <a href="cookie.html">Cookie</a></p>
+  </div>
+</footer>
+
+<!-- Cookie banner -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>Questo sito utilizza cookie tecnici per garantire il corretto funzionamento. <a href="cookie.html">Scopri di più</a></p>
+  <button onclick="document.getElementById('cookieBanner').style.display='none'">OK</button>
+</div>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.step, .perche-step').forEach(s => obs.observe(s));
+</script>
+
+</body>
+</html>
