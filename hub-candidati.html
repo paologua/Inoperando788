@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inoperando – Cerchi lavoro?</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --orange: #5AA9D9;
+  --orange-dim: rgba(90,169,217,0.12);
+  --orange-border: rgba(90,169,217,0.3);
+  --dark: #0F0F0D;
+  --mid: #161613;
+  --surface: #1C1C18;
+  --surface2: #222220;
+  --light: #F0EBE1;
+  --muted: #6B6760;
+  --line: rgba(255,255,255,0.07);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--dark);
+  color: var(--light);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.025; pointer-events: none; z-index: 0;
+}
+body::after {
+  content: ''; position: fixed; top: -20%; right: -10%; width: 55vw; height: 120vh;
+  background: linear-gradient(160deg, rgba(90,169,217,0.06) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+
+/* ── HEADER ── */
+header {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 48px;
+  background: rgba(15,15,13,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.logo { display: flex; align-items: center; text-decoration: none; margin-left: -20px; }
+.logo-mark { height: 60px; width: auto; flex-shrink: 0; object-fit: contain; }
+nav { display: flex; gap: 20px; align-items: center; margin-left: auto; }
+nav a { color: var(--muted); text-decoration: none; font-size: 0.45rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+nav a:hover { color: var(--light); }
+
+/* ── PAGE ── */
+.page {
+  position: relative; z-index: 1;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 80px 24px 100px;
+}
+
+/* ── HERO ── */
+.hub-hero {
+  margin-bottom: 64px;
+  animation: fadeUp 0.6s 0.1s both;
+}
+.hub-hero .tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--orange-dim); border: 1px solid var(--orange-border);
+  color: var(--orange); font-size: 0.72rem; letter-spacing: 0.12em;
+  text-transform: uppercase; padding: 5px 14px; border-radius: 2px; margin-bottom: 20px;
+}
+.hub-hero .tag::before {
+  content: ''; display: inline-block; width: 5px; height: 5px;
+  background: var(--orange); border-radius: 50%;
+}
+.hub-hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 0.95; letter-spacing: 0.02em; color: var(--light);
+}
+.hub-hero h1 em { font-style: normal; color: var(--orange); }
+.hub-hero p {
+  margin-top: 16px; font-size: 0.9rem; color: var(--muted);
+  line-height: 1.65; max-width: 480px;
+}
+
+/* ── GRID ── */
+.hub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  animation: fadeUp 0.6s 0.25s both;
+}
+
+/* ── CARD ── */
+.hub-card {
+  position: relative;
+  display: flex; flex-direction: column; align-items: flex-start;
+  padding: 36px 32px;
+  background: var(--mid);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.hub-card::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(90,169,217,0.10) 0%, transparent 60%);
+  opacity: 0; transition: opacity 0.3s;
+}
+.hub-card:hover { border-color: rgba(90,169,217,0.45); transform: translateY(-3px); }
+.hub-card:hover::before { opacity: 1; }
+.hub-card:hover .card-arrow { transform: translate(3px, -3px); color: var(--orange); }
+
+.card-icon {
+  width: 48px; height: 48px;
+  background: rgba(90,169,217,0.13);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 24px;
+}
+.card-icon svg {
+  width: 24px; height: 24px;
+  stroke: var(--orange); fill: none;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+
+.card-label {
+  font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--orange); opacity: 0.7; margin-bottom: 8px;
+}
+.card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem; letter-spacing: 0.04em;
+  color: var(--light); line-height: 1;
+  margin-bottom: 12px;
+}
+.card-desc {
+  font-size: 0.85rem; font-weight: 400;
+  color: var(--muted); line-height: 1.55; flex: 1;
+}
+.card-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 20px;
+}
+.card-tag {
+  font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); border: 1px solid var(--line);
+  padding: 3px 8px; border-radius: 2px;
+}
+.card-arrow {
+  align-self: flex-end; margin-top: 24px;
+  font-size: 1.1rem; color: var(--muted);
+  transition: transform 0.25s, color 0.25s;
+}
+
+/* ── NOTE ── */
+.hub-note {
+  margin-top: 48px;
+  padding: 20px 24px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--mid);
+  font-size: 0.85rem; color: var(--muted); line-height: 1.6;
+  animation: fadeUp 0.6s 0.4s both;
+}
+.hub-note strong { color: var(--light); font-weight: 500; }
+
+/* ── FOOTER ── */
+footer {
+  position: relative; z-index: 1;
+  text-align: center; padding: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em;
+  margin-top: 80px;
+}
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--orange); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 580px) {
+  header { padding: 16px 20px; }
+  .logo { margin-left: 0; }
+  .logo-mark { height: 45px; }
+  nav { gap: 12px; }
+  nav a { font-size: 0.4rem; }
+  .page { padding: 48px 16px 80px; }
+  .hub-grid { grid-template-columns: 1fr; }
+  .hub-card { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    <img src="logo.png" class="logo-mark" alt="Inoperando logo">
+  </a>
+  <nav>
+    <a href="index.html#perche">Perché</a>
+    <a href="index.html#come-funziona">Come funziona</a>
+    <a href="contatto.html">Contatti</a>
+  </nav>
+</header>
+
+<div class="page">
+
+  <div class="hub-hero">
+    <div class="tag">Cerchi lavoro?</div>
+    <h1>In quale<br>settore <em>operi?</em></h1>
+    <p>Seleziona la tua area. Ogni percorso ha un modulo specifico — compila quello giusto per te.</p>
+  </div>
+
+  <div class="hub-grid">
+
+    <a class="hub-card" href="inoperando-form.html">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <div class="card-label">Area tecnica</div>
+      <div class="card-title">Operai</div>
+      <div class="card-desc">Saldatori, meccanici, montatori, elettricisti, muratori, manutentori e figure di cantiere.</div>
+      <div class="card-tags">
+        <span class="card-tag">Cantieri</span>
+        <span class="card-tag">Industria</span>
+        <span class="card-tag">Manutenzione</span>
+      </div>
+      <div class="card-arrow">↗</div>
+    </a>
+
+    <a class="hub-card" href="form-sicurezza.html">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="card-label">HSE / Compliance</div>
+      <div class="card-title">Sicurezza</div>
+      <div class="card-desc">RSPP, ASPP, addetti antincendio, coordinatori sicurezza, figure HSE per cantieri e industria.</div>
+      <div class="card-tags">
+        <span class="card-tag">RSPP</span>
+        <span class="card-tag">ASPP</span>
+        <span class="card-tag">HSE</span>
+      </div>
+      <div class="card-arrow">↗</div>
+    </a>
+
+    <a class="hub-card" href="form-magazzino.html">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      </div>
+      <div class="card-label">Logistica</div>
+      <div class="card-title">Magazzino</div>
+      <div class="card-desc">Magazzinieri, carrellisti, addetti logistica, operatori picking, responsabili di magazzino.</div>
+      <div class="card-tags">
+        <span class="card-tag">Muletto</span>
+        <span class="card-tag">Picking</span>
+        <span class="card-tag">WMS</span>
+      </div>
+      <div class="card-arrow">↗</div>
+    </a>
+
+    <a class="hub-card" href="form-neodiplomati.html">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      </div>
+      <div class="card-label">Primo impiego</div>
+      <div class="card-title">Neodiplomati</div>
+      <div class="card-desc">Geometri, periti industriali, tecnici meccanici ed elettronici al primo ingresso nel mondo del lavoro.</div>
+      <div class="card-tags">
+        <span class="card-tag">ITIS</span>
+        <span class="card-tag">Geometra</span>
+        <span class="card-tag">Perito</span>
+      </div>
+      <div class="card-arrow">↗</div>
+    </a>
+
+  </div>
+
+  <div class="hub-note">
+    <strong>Non trovi la tua categoria?</strong> Scrivici a <a href="mailto:info@inoperando.it" style="color:var(--orange)">info@inoperando.it</a> — valutiamo ogni profilo che ha senso per il mercato industriale italiano.
+  </div>
+
+</div>
+
+<footer>© 2026 Inoperando · <a href="privacy.html">Privacy</a> · <a href="cookie.html">Cookie</a></footer>
+
+</body>
+</html>
