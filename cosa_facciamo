@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- Google Search Console -->
+<meta name="google-site-verification" content="googlec433f743073de518.html">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- SEO -->
+<title>Cosa Facciamo — Workforce management, recruitment operativo | Inoperando</title>
+<meta name="description" content="Inoperando integra workforce management, recruitment operativo e mappatura geografica. Matching deterministico, operai qualificati e geolocalizzati.">
+<meta name="keywords" content="cosa facciamo inoperando, workforce management, recruitment operativo, mappatura geografica, matching deterministico, operai qualificati">
+<meta name="author" content="Inoperando">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://inoperando.it/cosa-facciamo.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Cosa Facciamo — Inoperando | Workforce management operativo">
+<meta property="og:description" content="Integrazione tra dati aziende, competenze candidati, geografia e matching deterministico. Per operai qualificati e disponibili.">
+<meta property="og:url" content="https://inoperando.it/cosa-facciamo.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://inoperando.it/og-image.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cosa Facciamo — Inoperando">
+<meta name="twitter:description" content="Workforce management, recruitment operativo e mappatura geografica. Nessun CV a caso.">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --orange: #5AA9D9;
+  --dark: #0F0F0D;
+  --mid: #1A1A17;
+  --surface: #1C1C18;
+  --light: #F5F0E8;
+  --muted: #6B6760;
+  --line: rgba(255,255,255,0.07);
+}
+
+html, body { 
+  background: var(--dark); 
+  color: var(--light); 
+  font-family: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  overflow-x: hidden; 
+  scroll-behavior: smooth;
+}
+
+body::before {
+  content: ''; position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03; pointer-events: none; z-index: 0;
+}
+body::after {
+  content: ''; position: fixed; top: -20%; right: -10%; width: 55vw; height: 120vh;
+  background: linear-gradient(160deg, rgba(90,169,217,0.07) 0%, transparent 60%);
+  pointer-events: none; z-index: 0;
+}
+
+/* HEADER (menu: Perché, Guida rapida, Mappa operai, Chi siamo, Cosa facciamo) */
+header {
+  position: sticky; top: 0; z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px;
+  background: rgba(15,15,13,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-left: -20px;
+}
+.logo-mark {
+  height: 45px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+nav { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+nav a { color: var(--muted); text-decoration: none; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+nav a:hover { color: var(--light); }
+nav a.active { color: var(--orange); border-bottom: 2px solid var(--orange); padding-bottom: 4px; }
+
+/* MAIN CONTENT — respiro generoso */
+.page-container {
+  position: relative; z-index: 10;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 120px 48px 120px;
+}
+
+/* Hero title: "Cosa facciamo" in blu, sottotitolo in bianco su riga successiva */
+.hero-title {
+  margin-bottom: 60px;
+}
+.cosa-facciamo-blu {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+.sottotitolo-bianco {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: var(--light);
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+.subhead {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.5;
+  border-left: 3px solid var(--orange);
+  padding-left: 20px;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+/* Contenuto principale */
+.content-section {
+  margin-bottom: 56px;
+}
+.content-section p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(245,240,232,0.85);
+  margin-bottom: 24px;
+}
+h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.02em;
+  color: var(--orange);
+  margin: 48px 0 16px 0;
+  font-weight: 400;
+}
+h2:first-of-type {
+  margin-top: 0;
+}
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0 24px 0;
+}
+ul li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(245,240,232,0.85);
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 12px;
+}
+ul li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  opacity: 0.8;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: var(--line);
+  margin: 56px 0 48px 0;
+}
+
+/* FOOTER */
+footer {
+  position: relative; z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 48px;
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+footer p { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
+footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; margin: 0 8px; }
+footer a:hover { color: var(--orange); }
+
+/* Responsive */
+@media (max-width: 700px) {
+  header { padding: 12px 20px; }
+  .logo { margin-left: 0; }
+  .logo-mark { height: 32px; }
+  nav { gap: 14px; justify-content: flex-end; }
+  nav a { font-size: 0.5rem; letter-spacing: 0.06em; }
+  .page-container { padding: 80px 24px 80px; }
+  .cosa-facciamo-blu { font-size: 2.5rem; }
+  .sottotitolo-bianco { font-size: 1.5rem; }
+  .subhead { font-size: 1rem; padding-left: 16px; }
+  h2 { font-size: 1.6rem; margin-top: 32px; }
+  footer { padding: 24px 20px; }
+  .footer-content { flex-direction: column; text-align: center; gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    <img src="logo.png" class="logo-mark" alt="Inoperando logo" onerror="this.src='https://placehold.co/140x45?text=INOPERANDO'">
+  </a>
+  <nav>
+    <a href="index.html#perche">Perché</a>
+    <a href="guida-rapida.html">Guida rapida</a>
+    <a href="mappa-operai.html">Mappa operai</a>
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="cosa-facciamo.html" class="active">Cosa facciamo</a>
+  </nav>
+</header>
+
+<main class="page-container">
+  <div class="hero-title">
+    <!-- "Cosa facciamo" in blu (orange) -->
+    <div class="cosa-facciamo-blu">Cosa facciamo</div>
+    <!-- Sottotitolo in bianco: integrazione operativa -->
+    <div class="sottotitolo-bianco">Workforce management, recruitment operativo e mappatura geografica</div>
+    <div class="subhead">Dati, geografia e contatto umano. Nessun CV a caso, nessuna intermediazione opaca.</div>
+  </div>
+
+  <div class="content-section">
+    <p>Inoperando integra workforce management, recruitment operativo e mappatura geografica per fornire alle aziende operai qualificati, disponibili e geolocalizzati.</p>
+
+    <h2>Raccolta dati dalle aziende</h2>
+    <p>Acquisiamo fabbisogni, competenze richieste, sedi operative e capacità produttiva.</p>
+
+    <h2>Raccolta dati dai candidati</h2>
+    <p>Raccogliamo competenze, disponibilità, esperienze e mobilità geografica per garantire operai capaci e realmente disponibili.</p>
+
+    <h2>Mappatura geografica</h2>
+    <p>Collocazione di aziende, workforce e operai su una blueprint dell'Italia per individuare zone di carenza o eccesso.</p>
+
+    <h2>Matching deterministico</h2>
+    <p>Matching basato su criteri verificabili: competenze, distanza reale, disponibilità e vincoli operativi.</p>
+
+    <h2>Contatto diretto</h2>
+    <p>Contattiamo personalmente aziende e operai, organizziamo colloqui e aggiorniamo i dati in tempo reale.</p>
+
+    <h2>Perché funziona</h2>
+    <p>Perché unisce dati, geografia, disponibilità reale e contatto umano. Nessun CV a caso, nessuna intermediazione opaca.</p>
+  </div>
+
+  <!-- Nessun bottone CTA, solo contenuto informativo -->
+</main>
+
+<footer>
+  <div class="footer-content">
+    <p>© 2026 Inoperando · Tutti i diritti riservati</p>
+    <p>
+      <a href="privacy.html">Privacy</a> | 
+      <a href="cookie.html">Cookie</a> | 
+      <a href="contatto.html">Contatti</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Cookie banner -->
+<div class="cookie-banner" id="cookieBanner" style="position:fixed; bottom:0; left:0; right:0; background:rgba(26,26,23,0.96); backdrop-filter:blur(12px); border-top:1px solid var(--line); padding:16px 24px; z-index:1000; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:16px; font-size:0.85rem;">
+  <p style="margin:0; color:var(--muted);">Questo sito utilizza cookie tecnici per garantire il corretto funzionamento. <a href="cookie.html" style="color:var(--orange); text-decoration:none;">Scopri di più</a></p>
+  <button onclick="document.getElementById('cookieBanner').style.display='none'" style="background:var(--orange); border:none; padding:6px 20px; border-radius:40px; cursor:pointer; font-weight:600;">OK</button>
+</div>
+
+<script>
+  // Gestione cookie banner con localStorage
+  (function() {
+    const banner = document.getElementById('cookieBanner');
+    if (banner && localStorage.getItem('cookieAccepted') === 'true') {
+      banner.style.display = 'none';
+    }
+    const acceptBtn = banner?.querySelector('button');
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieAccepted', 'true');
+        banner.style.display = 'none';
+      });
+    }
+  })();
+</script>
+</body>
+</html>
