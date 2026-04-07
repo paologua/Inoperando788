@@ -70,7 +70,7 @@ body::after {
   pointer-events: none; z-index: 0;
 }
 
-/* HEADER (menu semplificato: Perché, Guida rapida, Mappa operai, Chi siamo) */
+/* HEADER (menu: Perché, Guida rapida, Mappa operai, Chi siamo) */
 header {
   position: sticky; top: 0; z-index: 100;
   display: flex;
@@ -98,34 +98,34 @@ nav a { color: var(--muted); text-decoration: none; font-size: 0.7rem; font-weig
 nav a:hover { color: var(--light); }
 nav a.active { color: var(--orange); border-bottom: 2px solid var(--orange); padding-bottom: 4px; }
 
-/* MAIN CONTENT */
+/* MAIN CONTENT — più respiro tra header e titolo */
 .page-container {
   position: relative; z-index: 10;
   max-width: 880px;
   margin: 0 auto;
-  padding: 80px 48px 120px;
+  padding: 120px 48px 120px;  /* padding-top aumentato da 80px a 120px per dare respiro */
 }
 
-/* Hero / titolo */
+/* Hero title: chi siamo in blu (orange) e sottotitolo in bianco su riga successiva */
 .hero-title {
-  margin-bottom: 48px;
+  margin-bottom: 60px;
 }
-.badge {
-  display: inline-block;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-h1 {
+.chi-siamo-blu {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  font-size: clamp(3rem, 7vw, 5rem);
   line-height: 1.05;
   letter-spacing: 0.02em;
-  color: var(--light);
-  margin-bottom: 20px;
+  color: var(--orange);  /* colore blu/azzurro come da richiesta */
+  margin-bottom: 12px;
+}
+.sottotitolo-bianco {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: var(--light);  /* bianco/grigio chiaro */
+  font-weight: 400;
+  margin-bottom: 32px;
 }
 .subhead {
   font-size: 1.2rem;
@@ -134,7 +134,8 @@ h1 {
   line-height: 1.5;
   border-left: 3px solid var(--orange);
   padding-left: 20px;
-  margin-bottom: 40px;
+  margin-top: 16px;
+  margin-bottom: 0;
 }
 
 /* Contenuto principale */
@@ -152,7 +153,7 @@ h2 {
   font-size: 1.8rem;
   letter-spacing: 0.02em;
   color: var(--orange);
-  margin: 40px 0 16px 0;
+  margin: 48px 0 16px 0;
   font-weight: 400;
 }
 h2:first-of-type {
@@ -186,46 +187,6 @@ hr {
   margin: 56px 0 48px 0;
 }
 
-/* CTA bottom */
-.cta-bottom {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 40px 32px;
-  text-align: center;
-  margin-top: 20px;
-}
-.cta-bottom p {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-bottom: 28px;
-  color: var(--light);
-}
-.btn-group {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.btn-outline {
-  display: inline-block;
-  padding: 12px 28px;
-  border: 1px solid var(--orange);
-  border-radius: 40px;
-  color: var(--orange);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  transition: all 0.25s;
-  background: transparent;
-}
-.btn-outline:hover {
-  background: var(--orange);
-  color: var(--dark);
-  transform: translateY(-2px);
-}
-
 /* FOOTER */
 footer {
   position: relative; z-index: 10;
@@ -256,13 +217,11 @@ footer a:hover { color: var(--orange); }
   .logo-mark { height: 32px; }
   nav { gap: 16px; }
   nav a { font-size: 0.55rem; letter-spacing: 0.08em; }
-  .page-container { padding: 50px 24px 80px; }
-  h1 { font-size: 2.4rem; }
+  .page-container { padding: 80px 24px 80px; }  /* mobile: respiro ridotto ma comunque maggiore */
+  .chi-siamo-blu { font-size: 2.5rem; }
+  .sottotitolo-bianco { font-size: 1.6rem; }
   .subhead { font-size: 1rem; padding-left: 16px; }
   h2 { font-size: 1.6rem; margin-top: 32px; }
-  .cta-bottom { padding: 28px 20px; }
-  .btn-group { flex-direction: column; align-items: center; gap: 12px; }
-  .btn-outline { width: 100%; text-align: center; max-width: 240px; }
   footer { padding: 24px 20px; }
   .footer-content { flex-direction: column; text-align: center; gap: 12px; }
 }
@@ -284,8 +243,10 @@ footer a:hover { color: var(--orange); }
 
 <main class="page-container">
   <div class="hero-title">
-    <div class="badge">Identità operativa</div>
-    <h1>Chi Siamo — Infrastruttura operativa per operai e aziende</h1>
+    <!-- "Chi siamo" in blu (orange) -->
+    <div class="chi-siamo-blu">Chi siamo</div>
+    <!-- Sottotitolo in bianco sulla riga successiva -->
+    <div class="sottotitolo-bianco">Infrastruttura operativa per operai e aziende</div>
     <div class="subhead">Non un portale, non un'agenzia. Un sistema operativo modulare per workforce, processi e operai qualificati.</div>
   </div>
 
@@ -313,15 +274,7 @@ footer a:hover { color: var(--orange); }
     <p>Costruire il primo sistema operativo per il lavoro in Italia, capace di integrare workforce, processi, dati e identità aziendale in un'unica infrastruttura coerente.</p>
   </div>
 
-  <hr>
-
-  <div class="cta-bottom">
-    <p><strong>Vuoi lavorare con chi fa sul serio?</strong></p>
-    <div class="btn-group">
-      <a href="hub-candidati.html" class="btn-outline">Cerchi lavoro →</a>
-      <a href="hub-aziende.html" class="btn-outline">Cerchi personale →</a>
-    </div>
-  </div>
+  <!-- Nessun bottone CTA, come richiesto -->
 </main>
 
 <footer>
@@ -342,7 +295,7 @@ footer a:hover { color: var(--orange); }
 </div>
 
 <script>
-  // Piccolo script per gestire la chiusura del cookie banner se presente
+  // Gestione cookie banner con localStorage
   (function() {
     const banner = document.getElementById('cookieBanner');
     if (banner && localStorage.getItem('cookieAccepted') === 'true') {
