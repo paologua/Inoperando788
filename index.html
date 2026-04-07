@@ -122,7 +122,7 @@ body::after {
   pointer-events: none; z-index: 0;
 }
 
-/* ── HEADER ── */
+/* HEADER (nuovo menu: Chi siamo, Cosa facciamo, Mappa operai, Guida rapida) */
 header {
   position: sticky; top: 0; z-index: 100;
   display: flex;
@@ -145,11 +145,11 @@ header {
   flex-shrink: 0;
   object-fit: contain;
 }
-nav { display: flex; gap: 24px; align-items: center; }
+nav { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
 nav a { color: var(--muted); text-decoration: none; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
 nav a:hover { color: var(--light); }
 
-/* ── HERO ── */
+/* HERO */
 .hero {
   position: relative; z-index: 10;
   min-height: calc(100vh - 77px);
@@ -181,7 +181,7 @@ h1 {
 h1 em { font-style: normal; color: var(--orange); }
 h1 .blue { font-style: normal; color: var(--orange); }
 
-/* ── CTA CARDS (bottoni principali) ── */
+/* CTA CARDS */
 .cta-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
   width: 100%; max-width: 720px;
@@ -243,7 +243,7 @@ h1 .blue { font-style: normal; color: var(--orange); }
   animation: fadeUp 0.7s 0.65s forwards;
 }
 
-/* ── PERCHÉ SEZIONE (visibile) ── */
+/* PERCHÉ SEZIONE */
 .perche {
   position: relative; z-index: 10;
   padding: 100px 48px;
@@ -297,7 +297,7 @@ h1 .blue { font-style: normal; color: var(--orange); }
   padding-top: 6px;
 }
 
-/* ── COME FUNZIONA (visibile) ── */
+/* COME FUNZIONA */
 .how {
   position: relative; z-index: 10;
   padding: 100px 48px;
@@ -340,53 +340,12 @@ h1 .blue { font-style: normal; color: var(--orange); }
   line-height: 1.55; padding-top: 6px;
 }
 
-/* ── CONTATTI SEZIONE ── */
-.contatti {
-  position: relative; z-index: 10;
-  padding: 100px 48px;
-  margin-top: 40px;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background: var(--dark);
-  text-align: center;
-}
-.contatti-label {
-  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--orange); margin-bottom: 56px;
-  display: flex; align-items: center; justify-content: center; gap: 14px;
-  font-weight: 500;
-}
-.contatti-label::before, .contatti-label::after { content: ''; width: 50px; height: 1px; background: var(--orange); opacity: 0.5; }
-.contatti-content {
-  max-width: 500px;
-  margin: 0 auto;
-}
-.contatti-item {
-  margin: 28px 0;
-  font-size: 1.2rem;
-}
-.contatti-item a {
-  color: var(--light);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-  border-bottom: 1px dashed var(--orange);
-  padding-bottom: 2px;
-}
-.contatti-item a:hover {
-  color: var(--orange);
-}
-.contatti-item small {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin-top: 8px;
-}
-
-/* ── FOOTER ── */
+/* FOOTER */
 footer {
   position: relative; z-index: 10;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 32px 48px;
   margin-top: 20px;
   border-top: 1px solid var(--line);
@@ -452,8 +411,8 @@ footer a:hover { color: var(--orange); }
   header { padding: 12px 20px; }
   .logo { margin-left: 0; }
   .logo-mark { height: 32px; }
-  nav { gap: 14px; }
-  nav a { font-size: 0.55rem; letter-spacing: 0.08em; }
+  nav { gap: 14px; justify-content: flex-end; }
+  nav a { font-size: 0.5rem; letter-spacing: 0.06em; }
   .hero { padding: 60px 20px 50px; }
   h1 { margin-bottom: 40px; }
   .cta-grid { grid-template-columns: 1fr; gap: 24px; max-width: 480px; }
@@ -462,7 +421,6 @@ footer a:hover { color: var(--orange); }
   .agency-msg { margin-top: 48px; font-size: 0.75rem; }
   .perche { padding: 60px 24px; }
   .how { padding: 60px 24px; }
-  .contatti { padding: 60px 24px; }
   footer { padding: 24px 20px; }
   .footer-content { flex-direction: column; text-align: center; gap: 12px; }
   .perche-step { gap: 18px; padding: 22px 0; }
@@ -481,9 +439,10 @@ footer a:hover { color: var(--orange); }
     <img src="logo.png" class="logo-mark" alt="Inoperando logo" onerror="this.src='https://placehold.co/140x45?text=INOPERANDO'">
   </a>
   <nav>
-    <a href="#perche">Perché</a>
-    <a href="#come-funziona">Come funziona</a>
-    <a href="contatto.html">Contatti</a>
+    <a href="chi-siamo.html">Chi siamo</a>
+    <a href="cosa-facciamo.html">Cosa facciamo</a>
+    <a href="mappa-operai.html">Mappa operai</a>
+    <a href="guida-rapida.html">Guida rapida</a>
   </nav>
 </header>
 
@@ -520,7 +479,7 @@ footer a:hover { color: var(--orange); }
   <p class="sub">un approccio concreto, rapido e affidabile</p>
 </main>
 
-<!-- PERCHÉ SEZIONE (visibile con animazione) -->
+<!-- PERCHÉ SEZIONE -->
 <section class="perche" id="perche">
   <div class="perche-label">Perché</div>
   <div class="perche-steps">
@@ -532,7 +491,7 @@ footer a:hover { color: var(--orange); }
   </div>
 </section>
 
-<!-- COME FUNZIONA (visibile con animazione) -->
+<!-- COME FUNZIONA -->
 <section class="how" id="come-funziona">
   <div class="how-label">Come funziona</div>
   <div class="steps">
@@ -543,17 +502,6 @@ footer a:hover { color: var(--orange); }
     <div class="step"><span class="step-num">05</span><span class="step-text">L'azienda richiede il colloquio</span></div>
     <div class="step"><span class="step-num">06</span><span class="step-text">Registriamo l'esito</span></div>
     <div class="step"><span class="step-num">07</span><span class="step-text">Paghi solo se assumi</span></div>
-  </div>
-</section>
-
-<!-- CONTATTI SEZIONE -->
-<section class="contatti" id="contatti">
-  <div class="contatti-label">Contatti</div>
-  <div class="contatti-content">
-    <div class="contatti-item">
-      <a href="mailto:info@inoperando.it">info@inoperando.it</a>
-      <small>Email</small>
-    </div>
   </div>
 </section>
 
@@ -581,14 +529,13 @@ footer a:hover { color: var(--orange); }
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // una volta visibile, non serve più osservare
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.2, rootMargin: "0px 0px -20px 0px" });
   
   animatedElements.forEach(el => observer.observe(el));
   
-  // assicurarsi che se qualcosa è già visibile venga subito mostrato (in caso di caricamento veloce)
   setTimeout(() => {
     animatedElements.forEach(el => {
       const rect = el.getBoundingClientRect();
@@ -598,6 +545,23 @@ footer a:hover { color: var(--orange); }
       }
     });
   }, 200);
+
+  // Cookie banner localStorage
+  (function() {
+    const banner = document.getElementById('cookieBanner');
+    if (banner && localStorage.getItem('cookieAccepted') === 'true') {
+      banner.style.display = 'none';
+    }
+    const acceptBtn = banner?.querySelector('button');
+    if (acceptBtn) {
+      const originalClick = acceptBtn.onclick;
+      acceptBtn.onclick = (e) => {
+        localStorage.setItem('cookieAccepted', 'true');
+        if (originalClick) originalClick(e);
+        banner.style.display = 'none';
+      };
+    }
+  })();
 </script>
 </body>
 </html>
