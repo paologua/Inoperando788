@@ -1,586 +1,390 @@
 <!DOCTYPE html>
-
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Google Search Console -->
-
-<meta name="google-site-verification" content="googlec433f743073de518.html">
-
-<!-- Favicon -->
-
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-<!-- SEO -->
-
-<title>Inoperando – Cerchi lavoro o personale? Operai, cantieri, recruiting</title>
-<meta name="description" content="Inoperando è il sistema operativo che connette chi cerca lavoro e chi cerca personale, con focus su operai, cantieri e recruiting. Approccio rapido, concreto e senza frizioni. Per trovaci basta cercare: Inoperando.">
-<meta name="keywords" content="cerco lavoro, cerco personale, inoperando, lavoro, recruiting, offerte di lavoro, ricerca personale, operai, cantieri, lavoro operai, lavoro cantieri">
-<meta name="author" content="Inoperando">
-<meta name="robots" content="index, follow">
-
-<!-- Canonical -->
-
-<link rel="canonical" href="https://inoperando.it/">
-
-<!-- Open Graph -->
-
-<meta property="og:title" content="Inoperando – Cerchi lavoro o personale?">
-<meta property="og:description" content="Sistema operativo per lavoro, personale, operai e cantieri. Per trovaci basta cercare: Inoperando.">
-<meta property="og:url" content="https://inoperando.it/">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://inoperando.it/og-image.jpg">
-
-<!-- Twitter Card -->
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Inoperando – Cerchi lavoro o personale?">
-<meta name="twitter:description" content="Lavoro, personale, operai e cantieri. Cerca: Inoperando.">
-<meta name="twitter:image" content="https://inoperando.it/og-image.jpg">
-
-<!-- Fonts -->
-
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Schema JSON-LD -->
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.inoperando.it/#organization",
-      "name": "Inoperando",
-      "url": "https://www.inoperando.it",
-      "description": "Sistema operativo che connette chi cerca lavoro e chi cerca personale, con focus su operai e cantieri.",
-      "logo": "https://www.inoperando.it/logo.png",
-      "sameAs": [
-        "https://www.youtube.com/@inoperando",
-        "https://www.instagram.com/inoperando",
-        "https://www.tiktok.com/@inoperando"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.inoperando.it/#website",
-      "url": "https://www.inoperando.it",
-      "name": "Inoperando",
-      "publisher": {
-        "@id": "https://www.inoperando.it/#organization"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.google.com/search?q=Inoperando+{search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.inoperando.it/#services",
-      "serviceType": [
-        "Cerco lavoro",
-        "Cerco personale",
-        "Ricerca operai",
-        "Personale per cantieri"
-      ],
-      "provider": {
-        "@id": "https://www.inoperando.it/#organization"
-      },
-      "areaServed": "Italia",
-      "description": "Servizi per chi cerca lavoro, personale, operai e personale per cantieri."
-    }
-  ]
-}
-</script>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Inoperando – Candidatura Neodiplomati</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --orange: #5AA9D9;
-  --dark: #0F0F0D;
-  --mid: #1A1A17;
-  --surface: #1C1C18;
-  --light: #F5F0E8;
-  --muted: #6B6760;
-  --line: rgba(255,255,255,0.07);
+  --orange: #5AA9D9; 
+  --orange-dim: rgba(90,169,217,0.12); 
+  --orange-border: rgba(90,169,217,0.3);
+  --dark: #0F0F0D; 
+  --mid: #161613; 
+  --surface: #1C1C18; 
+  --surface2: #222220;
+  --light: #F0EBE1; 
+  --muted: #6B6760; 
+  --line: rgba(255,255,255,0.07); 
+  --focus: rgba(90,169,217,0.35);
+  --error: #E85D5D;
+  --success: #8BC34A;
 }
-
-html, body { 
-  background: var(--dark); 
-  color: var(--light); 
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
-  overflow-x: hidden; 
-}
-
-body::before {
-content: ''; position: fixed; inset: 0;
-background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-opacity: 0.03; pointer-events: none; z-index: 0;
-}
-body::after {
-content: ''; position: fixed; top: -20%; right: -10%; width: 55vw; height: 120vh;
-background: linear-gradient(160deg, rgba(90,169,217,0.07) 0%, transparent 60%);
-pointer-events: none; z-index: 0;
-}
-
-/* ── HEADER ── */
-header {
-position: sticky; top: 0; z-index: 100;
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 16px 48px;
-background: rgba(15,15,13,0.92);
-backdrop-filter: blur(12px);
-border-bottom: 1px solid var(--line);
-}
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  margin-left: -20px;
-}
-.logo-mark {
-  height: 45px;
-  width: auto;
-  flex-shrink: 0;
-  object-fit: contain;
-}
-nav { display: flex; gap: 20px; align-items: center; }
-nav a { color: var(--muted); text-decoration: none; font-size: 0.55rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+html { scroll-behavior: smooth; }
+body { background: var(--dark); color: var(--light); font-family: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 300; min-height: 100vh; overflow-x: hidden; }
+body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); opacity: 0.025; pointer-events: none; z-index: 0; }
+header { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; background: rgba(15,15,13,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.logo { display: flex; align-items: center; text-decoration: none; margin-left: -20px; }
+.logo-mark { height: 60px; width: auto; flex-shrink: 0; object-fit: contain; }
+nav { display: flex; gap: 20px; align-items: center; margin-left: auto; }
+nav a { color: var(--muted); text-decoration: none; font-size: 0.45rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
 nav a:hover { color: var(--light); }
-
-/* ── HERO ── */
-.hero {
-position: relative; z-index: 10;
-min-height: calc(100vh - 77px);
-display: flex; flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 80px 48px 80px;
-text-align: center;
-}
-.tag {
-display: inline-block;
-color: var(--light);
-font-size: 0.75rem;
-font-weight: 500;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-margin-bottom: 20px;
-opacity: 0;
-animation: fadeUp 0.6s 0.2s forwards;
-}
-h1 {
-font-family: 'Bebas Neue', sans-serif;
-font-size: clamp(3.2rem, 7vw, 7rem);
-line-height: 0.95; letter-spacing: 0.02em; color: var(--light); max-width: 860px;
-margin: 0 auto;
-opacity: 0;
-animation: fadeUp 0.7s 0.35s forwards;
-margin-bottom: 80px;
-}
-h1 em { font-style: normal; color: var(--orange); }
-h1 .blue { font-style: normal; color: var(--orange); }
-
-/* ── CTA CARDS ── */
-.cta-grid {
-display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
-width: 100%; max-width: 680px;
-margin-top: 0;
-opacity: 0; animation: fadeUp 0.7s 0.45s forwards;
-}
-.cta-card {
-position: relative; display: flex; flex-direction: column; align-items: flex-start;
-padding: 36px 32px; background: var(--mid); border: 1px solid var(--line);
-border-radius: 4px; cursor: pointer; text-decoration: none; overflow: hidden;
-transition: border-color 0.25s, transform 0.25s;
-animation: breathe 3.6s ease-in-out infinite;
-}
-.cta-card:nth-child(2) { animation-delay: 1.8s; }
-.cta-card:hover { animation-play-state: paused; }
-.cta-card::before {
-content: ''; position: absolute; inset: 0;
-background: linear-gradient(135deg, rgba(90,169,217,0.10) 0%, transparent 60%);
-opacity: 0; transition: opacity 0.3s;
-}
-.cta-card:hover { border-color: rgba(90,169,217,0.45); transform: translateY(-3px); }
-.cta-card:hover::before { opacity: 1; }
-.cta-card:hover .card-arrow { transform: translate(3px, -3px); color: var(--orange); }
-.card-icon { width: 44px; height: 44px; background: rgba(90,169,217,0.13); border-radius: 3px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-.card-icon svg { width: 22px; height: 22px; stroke: var(--orange); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.card-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 0.04em; color: var(--light); line-height: 1; margin-bottom: 10px; }
-.card-desc { font-size: 0.85rem; font-weight: 400; color: var(--muted); line-height: 1.55; flex: 1; }
-.card-arrow { align-self: flex-end; margin-top: 24px; font-size: 1.1rem; color: var(--muted); transition: transform 0.25s, color 0.25s; }
-
-.agency-msg {
-  margin-top: 80px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--orange);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  opacity: 0;
-  animation: fadeUp 0.7s 0.55s forwards;
-}
-
-.sub {
-margin-top: 20px;
-font-size: 1rem;
-font-weight: 400;
-color: var(--muted);
-letter-spacing: 0.01em;
-max-width: 500px;
-margin-left: auto;
-margin-right: auto;
-line-height: 1.65;
-opacity: 0;
-animation: fadeUp 0.7s 0.65s forwards;
-}
-
-/* ── PERCHÉ SEZIONE ── */
-.perche {
-position: relative; z-index: 10;
-padding: 100px 48px;
-margin-top: 40px;
-border-top: 1px solid var(--line);
-border-bottom: 1px solid var(--line);
-background: var(--dark);
-}
-.perche-label {
-font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
-color: var(--orange); margin-bottom: 48px;
-display: flex; align-items: center; justify-content: center; gap: 12px;
-}
-.perche-label::before, .perche-label::after { content: ''; width: 40px; height: 1px; background: var(--orange); opacity: 0.4; }
-
-.perche-steps {
-display: flex; flex-direction: column; gap: 0;
-width: 100%; max-width: 780px;
-margin: 0 auto;
-}
-.perche-step {
-display: flex;
-gap: 28px;
-align-items: flex-start;
-padding: 24px 0;
-border-bottom: 1px solid var(--line);
-opacity: 0;
-transform: translateY(16px);
-transition: opacity 0.5s, transform 0.5s;
-}
-.perche-step:last-child { border-bottom: none; }
-.perche-step.visible { opacity: 1; transform: translateY(0); }
-
-.perche-step-num {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 2rem;
-line-height: 1;
-letter-spacing: 0.04em;
-color: var(--light);
-opacity: 0.9;
-min-width: 48px;
-padding-top: 2px;
-}
-.perche-step-text {
-font-size: 0.95rem;
-font-weight: 400;
-color: var(--orange);
-opacity: 0.35;
-line-height: 1.6;
-padding-top: 6px;
-}
-
-/* ── COME FUNZIONA ── */
-.how {
-position: relative; z-index: 10;
-padding: 100px 48px;
-margin-top: 40px;
-border-top: 1px solid var(--line);
-border-bottom: 1px solid var(--line);
-display: flex; flex-direction: column; align-items: center;
-background: var(--dark);
-}
-.how-label {
-font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
-color: var(--orange); margin-bottom: 48px;
-display: flex; align-items: center; gap: 12px;
-}
-.how-label::before, .how-label::after { content: ''; width: 40px; height: 1px; background: var(--orange); opacity: 0.4; }
-
-.steps {
-display: flex; flex-direction: column; gap: 0;
-width: 100%; max-width: 580px;
-}
-.step {
-display: flex; gap: 28px; align-items: flex-start;
-padding: 24px 0;
-border-bottom: 1px solid var(--line);
-opacity: 0; transform: translateY(16px);
-transition: opacity 0.5s, transform 0.5s;
-}
-.step:last-child { border-bottom: none; }
-.step.visible { opacity: 1; transform: translateY(0); }
-
-.step-num {
-font-family: 'Bebas Neue', sans-serif;
-font-size: 2rem; line-height: 1; letter-spacing: 0.04em;
-color: var(--orange); opacity: 0.35; min-width: 36px;
-padding-top: 2px;
-}
-.step-text {
-font-size: 0.95rem; font-weight: 400; color: var(--light);
-line-height: 1.6; padding-top: 6px;
-}
-
-/* ── CONTATTI SEZIONE ── */
-.contatti {
-position: relative; z-index: 10;
-padding: 100px 48px;
-margin-top: 40px;
-border-top: 1px solid var(--line);
-border-bottom: 1px solid var(--line);
-background: var(--dark);
-text-align: center;
-}
-.contatti-label {
-font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
-color: var(--orange); margin-bottom: 48px;
-display: flex; align-items: center; justify-content: center; gap: 12px;
-}
-.contatti-label::before, .contatti-label::after { content: ''; width: 40px; height: 1px; background: var(--orange); opacity: 0.4; }
-.contatti-content {
-max-width: 500px;
-margin: 0 auto;
-}
-.contatti-item {
-margin: 24px 0;
-font-size: 1.2rem;
-}
-.contatti-item a {
-color: var(--light);
-text-decoration: none;
-transition: color 0.2s;
-}
-.contatti-item a:hover {
-color: var(--orange);
-}
-.contatti-item small {
-display: block;
-font-size: 0.8rem;
-color: var(--muted);
-margin-top: 4px;
-}
-
-/* ── FOOTER ── */
-footer {
-position: relative; z-index: 10;
-display: flex; align-items: center; justify-content: center;
-padding: 20px 48px;
-margin-top: 40px;
-border-top: 1px solid var(--line);
-}
-.footer-content {
-display: flex;
-justify-content: space-between;
-align-items: center;
-flex-wrap: wrap;
-gap: 20px;
-width: 100%;
-max-width: 1200px;
-}
-footer p { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
+.progress-wrap { position: sticky; top: 61px; z-index: 99; background: var(--mid); border-bottom: 1px solid var(--line); padding: 0 48px; }
+.progress-bar { height: 2px; background: var(--orange); transition: width 0.4s ease; width: 0%; }
+.page { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; padding: 56px 24px 100px; }
+.form-hero { margin-bottom: 56px; animation: fadeUp 0.6s 0.1s both; }
+.form-hero .tag { display: inline-flex; align-items: center; gap: 8px; background: var(--orange-dim); border: 1px solid var(--orange-border); color: var(--orange); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 14px; border-radius: 2px; margin-bottom: 20px; }
+.form-hero .tag::before { content: ''; display: inline-block; width: 5px; height: 5px; background: var(--orange); border-radius: 50%; }
+.form-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 0.95; letter-spacing: 0.02em; color: var(--light); }
+.form-hero h1 em { font-style: normal; color: var(--orange); }
+.form-hero p { margin-top: 16px; font-size: 0.88rem; color: var(--muted); line-height: 1.65; max-width: 480px; }
+.section { margin-bottom: 48px; animation: fadeUp 0.5s both; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s; }
+.section.error-highlight { border-left: 3px solid var(--error); box-shadow: 0 0 0 1px rgba(232,93,93,0.2); }
+.section-header { display: flex; align-items: center; gap: 14px; background: var(--surface); padding: 16px 24px; border-bottom: 1px solid var(--line); }
+.section-num { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: var(--orange); letter-spacing: 0.1em; min-width: 28px; }
+.section-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.05rem; letter-spacing: 0.08em; color: var(--light); text-transform: uppercase; }
+.section-body { padding: 24px; display: flex; flex-direction: column; gap: 20px; background: var(--mid); }
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field label { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+input[type="text"], input[type="email"], input[type="number"], textarea, select { background: var(--surface2); border: 1px solid var(--line); color: var(--light); font-family: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 0.92rem; font-weight: 300; padding: 12px 16px; border-radius: 3px; width: 100%; outline: none; transition: border-color 0.2s, background 0.2s; -webkit-appearance: none; }
+input:focus, textarea:focus, select:focus { border-color: var(--focus); background: #1e1e1a; }
+input.error-input, select.error-input, textarea.error-input { border-color: var(--error); background: rgba(232,93,93,0.08); }
+input::placeholder, textarea::placeholder { color: #42423e; }
+textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6760' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; cursor: pointer; }
+select option { background: #222220; }
+.checkbox-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 12px; }
+@media (max-width: 680px) { .checkbox-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .checkbox-grid { grid-template-columns: 1fr; } }
+.check-label { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: var(--light); cursor: pointer; padding: 8px 12px; border-radius: 3px; border: 1px solid var(--line); background: var(--surface2); transition: border-color 0.2s, background 0.2s; user-select: none; }
+.check-label:hover { border-color: var(--orange-border); background: #1e1e1a; }
+.check-label input[type="checkbox"] { display: none; }
+.check-box { width: 16px; height: 16px; min-width: 16px; border: 1px solid var(--muted); border-radius: 2px; display: flex; align-items: center; justify-content: center; transition: background 0.15s, border-color 0.15s; }
+.check-label input:checked ~ .check-box { background: var(--orange); border-color: var(--orange); }
+.check-box::after { content: ''; width: 5px; height: 3px; border-left: 1.5px solid var(--dark); border-bottom: 1.5px solid var(--dark); transform: rotate(-45deg) translateY(-1px); display: none; }
+.check-label input:checked ~ .check-box::after { display: block; }
+.consent-label { display: flex; align-items: flex-start; gap: 12px; font-size: 0.85rem; color: var(--muted); cursor: pointer; line-height: 1.5; }
+.consent-label input[type="checkbox"] { display: none; }
+.consent-box { width: 18px; height: 18px; min-width: 18px; margin-top: 2px; border: 1px solid var(--muted); border-radius: 2px; display: flex; align-items: center; justify-content: center; transition: background 0.15s, border-color 0.15s; }
+.consent-label input:checked ~ .consent-box { background: var(--orange); border-color: var(--orange); }
+.consent-box::after { content: ''; width: 6px; height: 4px; border-left: 1.5px solid var(--dark); border-bottom: 1.5px solid var(--dark); transform: rotate(-45deg) translateY(-1px); display: none; }
+.consent-label input:checked ~ .consent-box::after { display: block; }
+.submit-wrap { margin-top: 12px; text-align: right; animation: fadeUp 0.5s 0.8s both; }
+button[type="submit"] { display: inline-flex; align-items: center; gap: 12px; background: var(--orange); color: var(--dark); font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.12em; padding: 16px 36px; border: none; border-radius: 3px; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+button[type="submit"]:hover { background: #ff5c12; transform: translateY(-2px); }
+button[type="submit"]:disabled { opacity: 0.6; transform: none; cursor: not-allowed; background: var(--orange); }
+button[type="submit"] svg { width: 18px; height: 18px; stroke: var(--dark); fill: none; stroke-width: 2; stroke-linecap: round; }
+footer { position: relative; z-index: 1; text-align: center; padding: 24px; border-top: 1px solid var(--line); font-size: 0.75rem; color: var(--muted); letter-spacing: 0.04em; }
 footer a { color: var(--muted); text-decoration: none; }
 footer a:hover { color: var(--orange); }
-
-/* Cookie banner */
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(26,26,23,0.95);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid var(--line);
-  padding: 16px 24px;
-  z-index: 1000;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  font-size: 0.85rem;
-}
-.cookie-banner p {
-  margin: 0;
-  color: var(--muted);
-}
-.cookie-banner a {
-  color: var(--orange);
-  text-decoration: none;
-}
-.cookie-banner button {
-  background: var(--orange);
-  border: none;
-  padding: 8px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background 0.2s;
-}
-.cookie-banner button:hover {
-  background: #ff5c12;
-}
-
-@keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes breathe {
-  0%, 100% { transform: scale(1);        box-shadow: 0 0 0 0 rgba(90,169,217,0); }
-  50%       { transform: scale(1.018);   box-shadow: 0 0 18px 2px rgba(90,169,217,0.10); }
-}
-
-@media (max-width: 600px) {
-header { padding: 12px 20px; }
-.logo { margin-left: 0; }
-.logo-mark { height: 28px; }
-nav { gap: 10px; }
-nav a { font-size: 0.45rem; letter-spacing: 0.06em; }
-.hero { padding: 60px 20px 50px; }
-h1 { margin-bottom: 40px; }
-.cta-grid { grid-template-columns: 1fr; gap: 20px; }
-.agency-msg { margin-top: 40px; font-size: 0.8rem; }
-.sub { font-size: 0.9rem; }
-.perche { padding: 50px 24px; margin-top: 20px; }
-.how { padding: 50px 24px; margin-top: 20px; }
-.contatti { padding: 50px 24px; margin-top: 20px; }
-footer { padding: 20px 24px; margin-top: 20px; }
-.footer-content { flex-direction: column; text-align: center; }
-.perche-step { gap: 16px; }
-.perche-step-num { font-size: 1.5rem; min-width: 36px; }
-.perche-step-text { font-size: 0.85rem; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.error-msg { font-size: 0.7rem; color: var(--error); margin-top: 4px; letter-spacing: 0.02em; display: flex; align-items: center; gap: 5px; }
+.toast-notification { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: var(--surface2); backdrop-filter: blur(12px); border: 1px solid var(--orange-border); padding: 14px 28px; border-radius: 40px; color: var(--light); font-size: 0.85rem; font-weight: 400; z-index: 200; box-shadow: 0 12px 24px rgba(0,0,0,0.4); transition: opacity 0.3s, transform 0.3s; opacity: 0; transform: translateX(-50%) translateY(20px); pointer-events: none; }
+.toast-notification.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+@media (max-width: 580px) {
+  header { padding: 16px 20px; } .logo { margin-left: 0; } .logo-mark { height: 45px; }
+  nav { gap: 12px; } nav a { font-size: 0.4rem; }
+  .progress-wrap { padding: 0 20px; } .page { padding: 36px 16px 80px; }
+  .field-row { grid-template-columns: 1fr; } .section-body { padding: 18px; }
 }
 </style>
-
 </head>
 <body>
 
 <header>
-  <a class="logo" href="index.html">
-    <img src="logo.png" class="logo-mark" alt="Inoperando logo">
-  </a>
+  <a class="logo" href="index.html"><img src="logo.png" class="logo-mark" alt="Inoperando logo" onerror="this.src='https://placehold.co/120x40?text=INOPERANDO'"></a>
   <nav>
-    <a href="#perche">Perché</a>
-    <a href="#come-funziona">Come funziona</a>
+    <a href="index.html#perche">Perché</a>
+    <a href="index.html#come-funziona">Come funziona</a>
     <a href="contatto.html">Contatti</a>
   </nav>
 </header>
 
-<main class="hero">
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
 
-  <div class="tag">operai in tutta Italia</div>
+<div class="page">
+  <div class="form-hero">
+    <div class="tag">Primo impiego</div>
+    <h1>Candidatura<br><em>neodiplomati</em></h1>
+    <p>Non hai esperienza, ma hai un titolo e vuoi lavorare. Dicci chi sei e cosa sai fare — ci pensiamo noi al resto.</p>
+  </div>
 
-  <h1>Selezioniamo<br>personale <em>e</em> <span class="blue">aziende</span></h1>
+  <form action="salva_neodiplomato.php" method="post" id="mainForm" novalidate>
 
-  <div class="cta-grid">
-    <a class="cta-card" href="hub-candidati.html">
-      <div class="card-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
+    <!-- 01 DATI PERSONALI -->
+    <div class="section" data-section="personal" style="animation-delay:0.15s">
+      <div class="section-header"><span class="section-num">01</span><span class="section-title">Dati personali</span></div>
+      <div class="section-body">
+        <div class="field-row">
+          <div class="field"><label>Nome e cognome *</label><input type="text" name="nome" placeholder="Mario Rossi" required></div>
+          <div class="field"><label>Età *</label><input type="number" name="eta" placeholder="19" min="16" max="30" required></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Comune di residenza *</label><input type="text" name="comune" placeholder="Brescia" required></div>
+          <div class="field"><label>Telefono *</label><input type="text" name="telefono" placeholder="+39 333 1234567" required></div>
+        </div>
+        <div class="field"><label>Email *</label><input type="email" name="email" placeholder="mario@email.it" required></div>
       </div>
-      <div class="card-title">Cerchi lavoro?</div>
-      <div class="card-desc">Compila la tua identità operativa.</div>
-      <div class="card-arrow">↗</div>
-    </a>
-
-```
-<a class="cta-card" href="hub-aziende.html">
-  <div class="card-icon">
-    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-```
-
-  <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
-  <circle cx="12" cy="12" r="3"/>
-</svg>
-
-```
-  </div>
-  <div class="card-title">Cerchi personale?</div>
-  <div class="card-desc">Compila la scheda bisogno.</div>
-  <div class="card-arrow">↗</div>
-</a>
-```
-
-  </div>
-
-  <div class="agency-msg">non siamo un portale, non siamo un'agenzia</div>
-
-  <p class="sub">un approccio concreto, rapido e affidabile</p>
-
-</main>
-
-<!-- PERCHÉ SEZIONE -->
-
-<section class="perche" id="perche">
-  <div class="perche-label">Perché</div>
-  <div class="perche-steps">
-    <div class="perche-step"><span class="perche-step-num">01</span><span class="perche-step-text">Tutti cercano lavoro e le aziende non trovano personale</span></div>
-    <div class="perche-step"><span class="perche-step-num">02</span><span class="perche-step-text">I portali sono una discarica di annunci, i candidati fanno 1000 profili, 1000 upload, 1000 click. Nessun ritorno</span></div>
-    <div class="perche-step"><span class="perche-step-num">03</span><span class="perche-step-text">Le agenzie vivono di CV, non di assunzioni: quantità al posto della qualità</span></div>
-    <div class="perche-step"><span class="perche-step-num">04</span><span class="perche-step-text">Aziende e lavoratori spesso mentono e per questo nessuno si fida più</span></div>
-    <div class="perche-step"><span class="perche-step-num">05</span><span class="perche-step-text">Noi verifichiamo, filtriamo, confermiamo. Il rischio e le responsabilità sono tutti nostri</span></div>
-  </div>
-</section>
-
-<section class="how" id="come-funziona">
-  <div class="how-label">Come funziona</div>
-  <div class="steps">
-    <div class="step"><span class="step-num">01</span><span class="step-text">L'azienda compila la scheda bisogno</span></div>
-    <div class="step"><span class="step-num">02</span><span class="step-text">Il candidato compila la sua identità operativa</span></div>
-    <div class="step"><span class="step-num">03</span><span class="step-text">Facciamo il matching</span></div>
-    <div class="step"><span class="step-num">04</span><span class="step-text">Presentiamo solo profili coerenti</span></div>
-    <div class="step"><span class="step-num">05</span><span class="step-text">L'azienda richiede il colloquio</span></div>
-    <div class="step"><span class="step-num">06</span><span class="step-text">Registriamo l'esito</span></div>
-    <div class="step"><span class="step-num">07</span><span class="step-text">Paghi solo se assumi</span></div>
-  </div>
-</section>
-
-<!-- CONTATTI SEZIONE -->
-
-<section class="contatti" id="contatti">
-  <div class="contatti-label">Contatti</div>
-  <div class="contatti-content">
-    <div class="contatti-item">
-      <a href="contatto.html"><span class="__cf_email__" data-cfemail="6900070f0629000706190c1b08070d0647001d">[email&#160;protected]</span></a>
-      <small>Email</small>
     </div>
-  </div>
-</section>
 
-<footer>
-  <div class="footer-content">
-    <p>© 2026 Inoperando · Tutti i diritti riservati</p>
-    <p><a href="privacy.html">Privacy</a> | <a href="cookie.html">Cookie</a></p>
-  </div>
-</footer>
+    <!-- 02 DIPLOMA -->
+    <div class="section" data-section="diploma" style="animation-delay:0.22s">
+      <div class="section-header"><span class="section-num">02</span><span class="section-title">Diploma</span></div>
+      <div class="section-body">
+        <div class="field"><label>Indirizzo di studio</label><select name="indirizzo"><option value="itis_meccanica">ITIS – Meccanica e meccatronica</option><option value="itis_elettronica">ITIS – Elettronica ed elettrotecnica</option><option value="itis_informatica">ITIS – Informatica e telecomunicazioni</option><option value="itis_chimica">ITIS – Chimica e materiali</option><option value="itis_costruzioni">ITIS – Costruzioni, ambiente e territorio</option><option value="geometra">Istituto tecnico geometri / CAT</option><option value="perito_industriale">Perito industriale</option><option value="liceo_scientifico">Liceo scientifico</option><option value="altro">Altro</option></select></div>
+        <div class="field-row"><div class="field"><label>Anno di diploma</label><input type="text" name="anno_diploma" placeholder="2024"></div><div class="field"><label>Voto di diploma</label><input type="text" name="voto" placeholder="78/100, 90/100…"></div></div>
+        <div class="field"><label>Nome istituto</label><input type="text" name="istituto" placeholder="ITIS Castelli – Brescia"></div>
+      </div>
+    </div>
 
-<!-- Cookie banner -->
+    <!-- 03 STAGE E ALTERNANZA -->
+    <div class="section" data-section="stage" style="animation-delay:0.29s">
+      <div class="section-header"><span class="section-num">03</span><span class="section-title">Stage e alternanza scuola-lavoro</span></div>
+      <div class="section-body">
+        <div class="field-row"><div class="field"><label>Hai fatto stage / PCTO?</label><select name="stage"><option value="si">Sì</option><option value="no">No</option></select></div><div class="field"><label>Ore totali di stage</label><input type="text" name="ore_stage" placeholder="240 ore, 400 ore…"></div></div>
+        <div class="field"><label>Dove hai fatto stage (azienda / settore)</label><input type="text" name="azienda_stage" placeholder="Officina meccanica, studio tecnico, cantiere…"></div>
+        <div class="field"><label>Cosa hai fatto durante lo stage</label><textarea name="attivita_stage" placeholder="Descrivi le attività svolte…"></textarea></div>
+      </div>
+    </div>
 
-<div class="cookie-banner" id="cookieBanner">
-  <p>Questo sito utilizza cookie tecnici per garantire il corretto funzionamento. <a href="cookie.html">Scopri di più</a></p>
-  <button onclick="document.getElementById('cookieBanner').style.display='none'">OK</button>
+    <!-- 04 COMPETENZE TECNICHE -->
+    <div class="section" data-section="competenze" style="animation-delay:0.36s">
+      <div class="section-header"><span class="section-num">04</span><span class="section-title">Competenze tecniche acquisite</span></div>
+      <div class="section-body">
+        <div class="checkbox-grid"><label class="check-label"><input type="checkbox" name="competenze" value="Lettura disegno tecnico"><span class="check-box"></span>Lettura disegno tecnico</label><label class="check-label"><input type="checkbox" name="competenze" value="CAD 2D (AutoCAD)"><span class="check-box"></span>CAD 2D (AutoCAD)</label><label class="check-label"><input type="checkbox" name="competenze" value="CAD 3D (SolidWorks, Inventor)"><span class="check-box"></span>CAD 3D</label><label class="check-label"><input type="checkbox" name="competenze" value="Elettrotecnica base"><span class="check-box"></span>Elettrotecnica base</label><label class="check-label"><input type="checkbox" name="competenze" value="Pneumatica / oleodinamica"><span class="check-box"></span>Pneumatica / oleodinamica</label><label class="check-label"><input type="checkbox" name="competenze" value="PLC base"><span class="check-box"></span>PLC base</label><label class="check-label"><input type="checkbox" name="competenze" value="Topografia base"><span class="check-box"></span>Topografia base</label><label class="check-label"><input type="checkbox" name="competenze" value="Computo metrico"><span class="check-box"></span>Computo metrico</label><label class="check-label"><input type="checkbox" name="competenze" value="Pacchetto Office"><span class="check-box"></span>Pacchetto Office</label></div>
+        <div class="field"><label>Altre competenze (specificare)</label><input type="text" name="competenze_altro" placeholder="Programmazione, lingue, certificazioni…"></div>
+      </div>
+    </div>
+
+    <!-- 05 SETTORE PREFERITO -->
+    <div class="section" data-section="settori" style="animation-delay:0.43s">
+      <div class="section-header"><span class="section-num">05</span><span class="section-title">Dove vuoi lavorare</span></div>
+      <div class="section-body">
+        <div class="checkbox-grid"><label class="check-label"><input type="checkbox" name="settori" value="Officina meccanica"><span class="check-box"></span>Officina meccanica</label><label class="check-label"><input type="checkbox" name="settori" value="Industria manifatturiera"><span class="check-box"></span>Industria manifatturiera</label><label class="check-label"><input type="checkbox" name="settori" value="Cantiere edile"><span class="check-box"></span>Cantiere edile</label><label class="check-label"><input type="checkbox" name="settori" value="Ufficio tecnico"><span class="check-box"></span>Ufficio tecnico</label><label class="check-label"><input type="checkbox" name="settori" value="Manutenzione impianti"><span class="check-box"></span>Manutenzione impianti</label><label class="check-label"><input type="checkbox" name="settori" value="Automazione industriale"><span class="check-box"></span>Automazione industriale</label><label class="check-label"><input type="checkbox" name="settori" value="Logistica"><span class="check-box"></span>Logistica</label><label class="check-label"><input type="checkbox" name="settori" value="Non ho preferenze precise"><span class="check-box"></span>Aperto a tutto</label></div>
+      </div>
+    </div>
+
+    <!-- 06 DISPONIBILITÀ -->
+    <div class="section" data-section="disponibilita" style="animation-delay:0.5s">
+      <div class="section-header"><span class="section-num">06</span><span class="section-title">Disponibilità</span></div>
+      <div class="section-body">
+        <div class="field-row"><div class="field"><label>Da quando puoi iniziare</label><input type="text" name="inizio" placeholder="Subito / settembre 2026"></div><div class="field"><label>Tipo di contratto accettato</label><select name="contratto"><option value="apprendistato">Apprendistato</option><option value="stage">Stage retribuito</option><option value="determinato">Determinato</option><option value="indifferente">Indifferente, voglio iniziare</option></select></div></div>
+        <div class="field-row"><div class="field"><label>Patente auto</label><select name="patente"><option value="si">Sì, con auto</option><option value="si_senza_auto">Sì, senza auto</option><option value="no">No</option></select></div><div class="field"><label>Disponibilità trasferte</label><select name="trasferte"><option value="si">Sì</option><option value="no">No</option><option value="occasionale">Occasionale</option></select></div></div>
+        <div class="field"><label>Zone di lavoro accettate</label><input type="text" name="zone" placeholder="Brescia e provincia, tutta la Lombardia…"></div>
+      </div>
+    </div>
+
+    <!-- 07 CHI SEI -->
+    <div class="section" data-section="motivazione" style="animation-delay:0.57s">
+      <div class="section-header"><span class="section-num">07</span><span class="section-title">Chi sei</span></div>
+      <div class="section-body">
+        <div class="field"><label>Perché vuoi lavorare in questo settore *</label><textarea name="motivazione" style="min-height:100px" placeholder="Sii diretto. Non ci interessa la risposta giusta, ci interessa quella vera." required></textarea></div>
+        <div class="field"><label>Cosa sei disposto a imparare / fare che non sai ancora</label><textarea name="disponibile_imparare" placeholder="Saldatura, guida muletto, turni notturni, trasferte…"></textarea></div>
+      </div>
+    </div>
+
+    <!-- 08 CONSENSO -->
+    <div class="section" data-section="consenso" style="animation-delay:0.64s">
+      <div class="section-header"><span class="section-num">08</span><span class="section-title">Consenso</span></div>
+      <div class="section-body">
+        <label class="consent-label">
+          <input type="checkbox" name="consenso" required>
+          <span class="consent-box"></span>
+          Acconsento al trattamento dei dati personali come descritto nell'<a href="privacy.html" target="_blank" style="color: var(--orange);">informativa privacy</a>.
+        </label>
+      </div>
+    </div>
+
+    <div class="submit-wrap">
+      <button type="submit" id="submitBtn">Invia candidatura <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+    </div>
+  </form>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<footer>© 2026 Inoperando · <a href="mailto:info@inoperando.it">info@inoperando.it</a></footer>
+<div id="toastMsg" class="toast-notification"></div>
 
-const obs = new IntersectionObserver(entries => {
-entries.forEach((e, i) => {
-if (e.isIntersecting) {
-setTimeout(() => e.target.classList
+<script>
+(function(){
+  const form = document.getElementById('mainForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const toast = document.getElementById('toastMsg');
+  
+  function showToast(message, isError = true) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
+  }
+
+  function removeFieldErrors() {
+    document.querySelectorAll('.error-input').forEach(el => el.classList.remove('error-input'));
+    document.querySelectorAll('.section.error-highlight').forEach(el => el.classList.remove('error-highlight'));
+    const existingMsgs = document.querySelectorAll('.error-msg');
+    existingMsgs.forEach(msg => msg.remove());
+  }
+
+  function scrollToFirstError() {
+    const firstErrorField = document.querySelector('.error-input');
+    if (firstErrorField) {
+      firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      firstErrorField.focus({ preventScroll: true });
+    } else {
+      const firstErrorSection = document.querySelector('.section.error-highlight');
+      if(firstErrorSection) firstErrorSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  function validateForm() {
+    removeFieldErrors();
+    let isValid = true;
+    
+    // required fields: nome, eta, comune, telefono, email, motivazione, consenso
+    const nome = form.querySelector('input[name="nome"]');
+    const eta = form.querySelector('input[name="eta"]');
+    const comune = form.querySelector('input[name="comune"]');
+    const telefono = form.querySelector('input[name="telefono"]');
+    const email = form.querySelector('input[name="email"]');
+    const motivazione = form.querySelector('textarea[name="motivazione"]');
+    const consenso = form.querySelector('input[name="consenso"]');
+    
+    function markError(input, msg, sectionEl) {
+      if(input) {
+        input.classList.add('error-input');
+        const parentField = input.closest('.field');
+        if(parentField && !parentField.querySelector('.error-msg')) {
+          const errSpan = document.createElement('div');
+          errSpan.className = 'error-msg';
+          errSpan.innerHTML = `⚠️ ${msg}`;
+          parentField.appendChild(errSpan);
+        }
+      }
+      if(sectionEl) sectionEl.classList.add('error-highlight');
+      isValid = false;
+    }
+    
+    if(!nome.value.trim()) markError(nome, 'Nome e cognome obbligatorio', nome.closest('.section'));
+    if(!eta.value.trim() || parseInt(eta.value) < 16 || parseInt(eta.value) > 30) markError(eta, 'Età valida tra 16 e 30 anni', eta.closest('.section'));
+    if(!comune.value.trim()) markError(comune, 'Comune obbligatorio', comune.closest('.section'));
+    if(!telefono.value.trim()) markError(telefono, 'Telefono obbligatorio', telefono.closest('.section'));
+    const emailVal = email.value.trim();
+    const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+    if(!emailVal || !emailRegex.test(emailVal)) markError(email, 'Email valida obbligatoria', email.closest('.section'));
+    if(!motivazione.value.trim()) markError(motivazione, 'Spiega perché vuoi lavorare nel settore', motivazione.closest('.section'));
+    if(!consenso.checked) {
+      const consentSection = consenso.closest('.section');
+      if(consentSection) consentSection.classList.add('error-highlight');
+      const consentLabel = consentSection.querySelector('.consent-label');
+      if(consentLabel && !consentLabel.querySelector('.error-msg')) {
+        const errSpan = document.createElement('div');
+        errSpan.className = 'error-msg';
+        errSpan.innerHTML = '⚠️ Devi accettare il trattamento dei dati personali';
+        errSpan.style.marginTop = '8px';
+        consentLabel.after(errSpan);
+      }
+      isValid = false;
+    }
+    
+    return isValid;
+  }
+  
+  // progress bar update
+  const bar = document.getElementById('progressBar');
+  function updateProgress() {
+    if (!form) return;
+    const rect = form.getBoundingClientRect();
+    const scrollY = window.scrollY;
+    const formTop = rect.top + scrollY;
+    const formBottom = formTop + rect.height;
+    const viewportHeight = window.innerHeight;
+    let scrolled = Math.min(Math.max(0, scrollY - formTop + viewportHeight / 2), rect.height);
+    let pct = (scrolled / rect.height) * 100;
+    pct = Math.min(100, Math.max(0, pct));
+    bar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+  updateProgress();
+  
+  // Intersection Observer for fade-in sections
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(s => { s.style.opacity = '0'; s.style.transition = 'opacity 0.6s ease'; });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  sections.forEach(s => obs.observe(s));
+  
+  // handle submit with fetch simulation + validation + fake backend
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if(!validateForm()) {
+      scrollToFirstError();
+      showToast('❌ Controlla i campi evidenziati', true);
+      return;
+    }
+    
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Invio in corso...';
+    
+    // Simula invio asincrono (qui si può sostituire con fetch/XMLHttpRequest)
+    try {
+      const formData = new FormData(form);
+      // Simula richiesta al server "salva_neodiplomato.php"
+      // In ambiente reale: fetch(form.action, { method: 'POST', body: formData })
+      await new Promise(resolve => setTimeout(resolve, 1200));
+      
+      // Simulazione risposta positiva
+      console.log('Dati candidatura:', Object.fromEntries(formData.entries()));
+      showToast('✅ Candidatura inviata! Ti ricontatteremo entro 48h.', false);
+      form.reset();
+      // reset checkbox visivi (rimuovere checked visual)
+      document.querySelectorAll('.check-label input[type="checkbox"]').forEach(cb => { cb.checked = false; });
+      document.querySelector('input[name="consenso"]').checked = false;
+      // rimuovere errori e highlight
+      removeFieldErrors();
+      // reset visivo checkbox
+      document.querySelectorAll('.check-label .check-box').forEach(box => {});
+    } catch (err) {
+      showToast('⚠️ Errore nell\'invio. Riprova più tardi.', true);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Invia candidatura';
+      submitBtn.innerHTML = `Invia candidatura <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`;
+    }
+  });
+  
+  // remove error on input focus
+  const allInputs = form.querySelectorAll('input, textarea, select');
+  allInputs.forEach(input => {
+    input.addEventListener('focus', () => {
+      input.classList.remove('error-input');
+      const parentField = input.closest('.field');
+      if(parentField) {
+        const errMsg = parentField.querySelector('.error-msg');
+        if(errMsg) errMsg.remove();
+      }
+      const section = input.closest('.section');
+      if(section) section.classList.remove('error-highlight');
+    });
+  });
+  
+  const consentCheck = form.querySelector('input[name="consenso"]');
+  if(consentCheck) {
+    consentCheck.addEventListener('change', () => {
+      const section = consentCheck.closest('.section');
+      if(section) section.classList.remove('error-highlight');
+      const errDiv = section?.querySelector('.error-msg');
+      if(errDiv) errDiv.remove();
+    });
+  }
+  
+  // migliorie per checkbox group name per invio array (se necessario, ma già funzionale con PHP usando name="competenze[]")
+  // modifica attributi name per supporto array PHP
+  document.querySelectorAll('input[name="competenze"]').forEach(cb => cb.setAttribute('name', 'competenze[]'));
+  document.querySelectorAll('input[name="settori"]').forEach(cb => cb.setAttribute('name', 'settori[]'));
+})();
+</script>
+</body>
+</html>
